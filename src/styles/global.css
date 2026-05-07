@@ -37,16 +37,25 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
+	
+	/* Custom Cursor applied globally to the body */
+	cursor: url('/images/cursor.webp') 32 32, auto !important;
+	
 	background-image: url('/backgroundimage.jpg');
 	background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: #291A1A;
 	font-size: 20px;
 	line-height: 1.7;
+}
+
+/* Ensure interactive elements inherit the custom cursor instead of default browser cursors */
+a, button, input, textarea, select, [role="button"] {
+	cursor: inherit !important;
 }
 main {
 	width: 720px;
