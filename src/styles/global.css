@@ -30,22 +30,20 @@
 	font-style: normal;
 	font-display: swap;
 }
-/* Global Cursor Style */
-  cursor: url('/images/cursor.png') 32 32, auto !important;
 body {
 	font-family: "IMFellFrenchCanon", sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	
+
 	/* Custom Cursor */
 	cursor: url('/images/cursor.png') 32 32, auto !important;
-	
+
 	background-image: url('/images/backgroundimage.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-attachment: fixed; 
+	background-attachment: fixed;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: #291A1A;
@@ -62,10 +60,10 @@ main {
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 2em;
-	
+
 	/* Warm Cream Background */
-	background-color: #faf8f5; 
-	
+	background-color: #faf8f5;
+
 	/* Optional: Softens the edges and lifts the box visually */
 	border-radius: 8px;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1),
@@ -166,12 +164,8 @@ hr {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
 	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
