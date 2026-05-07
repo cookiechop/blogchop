@@ -13,9 +13,9 @@
 	},
 	"dependencies": {
     "@astrojs/cloudflare": "^13.0.0",
-    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/mdx": "^5.0.0",
     "@astrojs/rss": "^4.0.0",
-    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/sitemap": "^4.0.0",
     "astro": "^6.0.0",
     "typescript": "^5.9.0"
 	},
