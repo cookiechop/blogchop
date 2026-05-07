@@ -35,7 +35,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background-image: url('/public/backgroundimage.jpg') fixed, repeat;
+	background-image: url('/backgroundimage.jpg');
 	background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
