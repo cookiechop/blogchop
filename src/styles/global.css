@@ -35,7 +35,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	background-image: url('https://i.pinimg.com/1200x/0f/8e/d2/0f8ed2c6c7a57accffac10f9146aaace.jpg') fixed, repeat;
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
