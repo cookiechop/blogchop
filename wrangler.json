@@ -2,9 +2,12 @@
   "name": "cookieblog",
   "compatibility_date": "2025-10-08",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "./dist/_worker.js",
+  "main": "./dist/_worker.js/index.js",
   "assets": {
-    "directory": "./dist/client",
+    "directory": "./dist",
     "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
   }
 }
