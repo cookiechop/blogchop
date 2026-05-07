@@ -35,11 +35,14 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background-image: url('https://i.pinimg.com/1200x/0f/8e/d2/0f8ed2c6c7a57accffac10f9146aaace.jpg') fixed, repeat;
-	background-size: 100% 600px;
+	background-image: url('/public/backgroundimage.jpg') fixed, repeat;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
+	color: #291A1A
 	font-size: 20px;
 	line-height: 1.7;
 }
