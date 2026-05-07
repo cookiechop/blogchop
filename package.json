@@ -12,12 +12,12 @@
 		"publish": true
 	},
 	"dependencies": {
-		"@astrojs/cloudflare": "12.6.12",
-		"@astrojs/mdx": "4.3.13",
-		"@astrojs/rss": "4.0.14",
-		"@astrojs/sitemap": "3.6.1",
-		"astro": "5.16.9",
-		"typescript": "5.9.3"
+    "@astrojs/cloudflare": "^13.0.0",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^6.0.0",
+    "typescript": "^5.9.0"
 	},
 	"devDependencies": {
 		"wrangler": "^4.57.0"
