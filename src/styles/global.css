@@ -31,7 +31,7 @@
 	font-display: swap;
 }
 /* Global Cursor Style */
-  cursor: url('/images/cursor.webp') 32 32, auto !important;
+  cursor: url('/images/cursor.png') 32 32, auto !important;
 body {
 	font-family: "IMFellFrenchCanon", sans-serif;
 	margin: 0;
@@ -39,7 +39,7 @@ body {
 	text-align: left;
 	
 	/* Custom Cursor applied globally to the body */
-	cursor: url('/images/cursor.webp') 32 32, auto !important;
+	cursor: url('/images/cursor.png') 32 32, auto !important;
 	
 	background-image: url('/images/backgroundimage.jpg');
 	background-size: cover;
