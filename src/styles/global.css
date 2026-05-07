@@ -41,7 +41,7 @@ body {
 	/* Custom Cursor applied globally to the body */
 	cursor: url('/images/cursor.webp') 32 32, auto !important;
 	
-	background-image: url('/backgroundimage.jpg');
+	background-image: url('/images/backgroundimage.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
