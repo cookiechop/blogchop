@@ -38,7 +38,7 @@ body {
 	padding: 0;
 	text-align: left;
 	
-	/* Custom Cursor applied globally to the body */
+	/* Custom Cursor */
 	cursor: url('/images/cursor.png') 32 32, auto !important;
 	
 	background-image: url('/images/backgroundimage.jpg');
@@ -53,7 +53,7 @@ body {
 	line-height: 1.7;
 }
 
-/* Ensure interactive elements inherit the custom cursor instead of default browser cursors */
+/* Ensure interactive elements inherit the custom cursor */
 a, button, input, textarea, select, [role="button"] {
 	cursor: inherit !important;
 }
