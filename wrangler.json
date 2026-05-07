@@ -1,11 +1,10 @@
 {
   "name": "cookieblog",
-  "compatibility_date": "2026-05-05",
-    "assets": {
-    "directory": "./dist/client/"
-  },
-  "observability": {
-    "enabled": true
-  },
-  "upload_source_maps": true
+  "compatibility_date": "2025-10-08",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./dist/_worker.js",
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  }
 }
