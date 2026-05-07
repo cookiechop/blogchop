@@ -30,13 +30,10 @@
 	},
 	"private": true,
 	"scripts": {
-		"astro": "astro",
-		"build": "astro build",
-		"cf-typegen": "wrangler types",
-		"check": "astro build && tsc && wrangler deploy --dry-run",
-		"deploy": "wrangler deploy",
-		"dev": "astro dev",
-		"preview": "astro build && wrangler dev"
+  "dev": "astro dev",
+  "build": "astro build",
+  "preview": "wrangler dev",
+  "deploy": "wrangler deploy"
 	},
 	"type": "module"
 }
