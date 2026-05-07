@@ -18,5 +18,10 @@ export default defineConfig({
 			mode: "local",
 			type: "pages",
 		},
+		imageService: {
+			config: {
+				binding: "IMAGES",
+			},
+		},
 	}),
 });
