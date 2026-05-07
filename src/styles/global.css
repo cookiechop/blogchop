@@ -32,7 +32,6 @@
 }
 /* Global Cursor Style */
   cursor: url('/images/cursor.webp') 32 32, auto !important;
-}
 body {
 	font-family: "IMFellFrenchCanon", sans-serif;
 	margin: 0;
