@@ -12,3 +12,8 @@
 	},
 	"upload_source_maps": true
 }
+{
+  "name": "cookieblog",
+  "pages_build_output_dir": "./dist",
+  ...
+}
