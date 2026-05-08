@@ -5,10 +5,8 @@ pubDate: "May 07 2026"
 heroImage: "/blog-placeholder-3.jpg"
 ---
 
-<p style="text-align: center;">
-<img src="https://media1.tenor.com/m/OHscBeJkSu0AAAAd/papyrus.gif" width="300"/>
-</p><p></p>
-<br/>
+
+
 <style>
 #disc-collection * {
 all: unset;
@@ -107,18 +105,25 @@ visibility: visible;
 
 </div>
 
-# Album 1: Pet Sounds #
-  <div class="title">The Beach Boys - Pet Sounds</div>
-    <div class="disc">
-    <img src="https://external-content.duckduckgo.com/iu/?          u=https%3A%2F%2Fwww.sputnikmusic.com%2Fimages%2Falbums%2F6758.jpg&f=1&nofb=1&ipt=8bd44f0a3f1e8352ceee92f6be452731a71adc0ccb59ee59d0b73bcb920f2d4c"/>
-    </div>
+<div class="title">The Beach Boys - Pet Sounds</div>
 
-# Album 2: You'd Prefer an Astronaut #
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.sputnikmusic.com%2Fimages%2Falbums%2F6758.jpg&f=1&nofb=1&ipt=8bd44f0a3f1e8352ceee92f6be452731a71adc0ccb59ee59d0b73bcb920f2d4c"/>
+
+</div>
 
 <div class="title">Hum - You'd Prefer an Astronaut</div>
-  <div class="disc">
-  <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.jpgr.co.uk%2Fstch639_a.jpg&f=1&nofb=1&ipt=cd5fb24f5678fbd69654545be775eb43e4f1da0eda32f61f7c879b92fa75e692"/>
-    </div>
+
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.jpgr.co.uk%2Fstch639_a.jpg&f=1&nofb=1&ipt=cd5fb24f5678fbd69654545be775eb43e4f1da0eda32f61f7c879b92fa75e692"/>
+
+</div>
 
 <div class="title">George Harrison - All Things Must Pass</div>
 
@@ -191,4 +196,5 @@ visibility: visible;
 <div class="title">Candy Claws - Ceres & Calypso in the Deep Time</div>
 
 </div>
+
 
