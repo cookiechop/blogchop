@@ -1,0 +1,194 @@
+---
+title: "Some of my music favorites"
+description: "music music music"
+pubDate: "May 07 2026"
+heroImage: "/blog-placeholder-3.jpg"
+---
+
+<p style="text-align: center;">
+<img src="https://media1.tenor.com/m/OHscBeJkSu0AAAAd/papyrus.gif" width="300"/>
+</p><p></p>
+<br/>
+<style>
+#disc-collection * {
+all: unset;
+}
+
+#disc-collection {
+all: initial!important;
+width: 100%!important;
+height: 240px!important;
+margin: 10px 0!important;
+display: flex!important;
+flex-direction: row!important;
+position: relative!important;
+margin-left: 2px!important;
+}
+
+#disc-collection .disc {
+all:unset!important;
+perspective: 500px !important;
+width: 20px!important;
+transition: width 0.5s!important;
+}
+
+#disc-collection .disc:hover {
+width: 180px!important;
+}
+
+#disc-collection img {
+all:unset!important;
+transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s!important;
+width: 183px!important;
+height: 180px!important;
+transform: rotateX(0deg) rotateY(5deg)!important;
+transform-style: preserve-3d!important;
+border-radius: 4px!important;
+border: 2px solid rgba(0, 0, 0, 0.1)!important;
+margin-left: 20px!important;
+object-fit: cover!important;
+}
+
+#disc-collection .disc:after {
+content: "";
+background: url('https://fluorescent-lights.neocities.org/f0rzNHe.png'),
+linear-gradient(150deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2), 40%,
+rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.6));
+background-size: contain, cover;
+position: absolute;
+top: 0;
+left: 0;
+transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s!important;
+width: 210px!important;
+height: 183px!important;
+transform: rotateX(0deg) rotateY(5deg)!important;
+transform-style: preserve-3d!important;
+border: 0px solid rgba(0, 0, 0, 0)!important;
+object-fit: cover!important;
+}
+
+#disc-collection .disc:hover img {
+transform: rotateX(0deg) rotateY(1deg)!important;
+width: 183px!important;
+height: 180px!important;
+margin-top: -25px!important;
+margin-left: 20px!important;
+}
+
+#disc-collection .disc:hover:after {
+transform: rotateX(0deg) rotateY(1deg)!important;
+width: 210px!important;
+height: 183px!important;
+margin-top: -25px!important;
+}
+
+#disc-collection .title {
+color: black;
+font-family: arial, sans-seriff;
+visibility: hidden;
+position: absolute;
+bottom: 0px;
+text-align: center;
+width: 100%;
+padding-left: 6px;
+}
+
+#disc-collection .disc:nth-child(n):hover + .title {
+visibility: visible;
+}
+</style>
+
+<div id="disc-collection">
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.discogs.com%2Ft1ZQP40LYIuql67xo1HxUlnMWpbp1FMVXeJ4vzwfBIs%2Frs%3Afit%2Fg%3Asm%2Fq%3A90%2Fh%3A600%2Fw%3A600%2FczM6Ly9kaXNjb2dz%2FLWRhdGFiYXNlLWlt%2FYWdlcy9SLTMwNTgz%2FMzQyLTE3MTQ4MzQ3%2FNjktODg3My5qcGVn.jpeg&f=1&nofb=1&ipt=2d3ee9f66876ddd682fdc6f07e5c668dc057b1bd3bd22bd40a02c4af2ea71469"/>
+
+</div>
+
+# Album 1: Pet Sounds #
+  <div class="title">The Beach Boys - Pet Sounds</div>
+    <div class="disc">
+    <img src="https://external-content.duckduckgo.com/iu/?          u=https%3A%2F%2Fwww.sputnikmusic.com%2Fimages%2Falbums%2F6758.jpg&f=1&nofb=1&ipt=8bd44f0a3f1e8352ceee92f6be452731a71adc0ccb59ee59d0b73bcb920f2d4c"/>
+    </div>
+
+# Album 2: You'd Prefer an Astronaut #
+
+<div class="title">Hum - You'd Prefer an Astronaut</div>
+  <div class="disc">
+  <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.jpgr.co.uk%2Fstch639_a.jpg&f=1&nofb=1&ipt=cd5fb24f5678fbd69654545be775eb43e4f1da0eda32f61f7c879b92fa75e692"/>
+    </div>
+
+<div class="title">George Harrison - All Things Must Pass</div>
+
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.manicyouth.jp%2Fwp%2Fwp-content%2Fuploads%2F2014%2F02%2FMassive-Attack-Mezzanine-1998-640x640.jpg&f=1&nofb=1&ipt=64c04278baa01b2ae9355c69c7f80b1554df3644acda794b6577ad7042a387c5"/>
+
+</div>
+
+<div class="title">Massive Attack - Mezzanine</div>
+
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.7GJppPpUfiwrzy32pXMZHAHaHa%3Fpid%3DApi&f=1&ipt=9653ca2b6c91863113d93c25ef5c1024e36fcb928690310ccc4dd0ebb44845b6"/>
+
+</div>
+
+<div class="title">Pavement - Crooked Rain Crooked Rain</div>
+
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.discogs.com%2FSXqLc39N1peW21g3WQH89LtvhVk%3D%2Ffit-in%2F600x600%2Ffilters%3Astrip_icc()%3Aformat(jpeg)%3Amode_rgb()%3Aquality(90)%2Fdiscogs-images%2FR-8744832-1467851243-4082.jpeg.jpg&f=1&nofb=1&ipt=9a123c55ca523df8961baacf8b28a3090533495195d0ad3cb5c877aeaa708f7e"/>
+
+</div>
+
+<div class="title">The Avalanches - Wildflower</div>
+
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.discogs.com%2F5GzCUTfPlz99t54zdWW8yqrYoE4%3D%2Ffit-in%2F600x600%2Ffilters%3Astrip_icc()%3Aformat(jpeg)%3Amode_rgb()%3Aquality(90)%2Fdiscogs-images%2FR-170884-1324248990.jpeg.jpg&f=1&nofb=1&ipt=34fe9b6d91a1ae408b06cbabae67c827ef4fe234047bf46add4ee4fb644b02bc"/>
+
+</div>
+
+<div class="title">Getz & Gilberto</div>
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.discogs.com%2Fw18oH8ylf-sEbg043uh5mCD3ImsrR9AXVKb3s8OOCoA%2Frs%3Afit%2Fg%3Asm%2Fq%3A90%2Fh%3A595%2Fw%3A600%2FczM6Ly9kaXNjb2dz%2FLWRhdGFiYXNlLWlt%2FYWdlcy9SLTUwNTE2%2FMDktMTQzOTQ2NjEx%2FNi05MDAwLmpwZWc.jpeg&f=1&nofb=1&ipt=5880854c3e70761e5cd4ee2da8b31f435e5cc2750b2668a294d9d8308cc14213"/>
+
+</div>
+
+<div class="title">The Velvet Underground - Loaded</div>
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpreview.redd.it%2Fcasino-versus-japan-go-hawaii-2000-v0-ycg6eg32sv5d1.jpeg%3Fauto%3Dwebp%26s%3D190bdfb61b0494799d1b59f8d51472132838585e&f=1&nofb=1&ipt=286954bb3029d21dc4f6d4bf2ceefe8abfe10761bd8f530a9244505d16c97d1b"/>
+
+
+</div>
+
+
+<div class="title">Casino Versus Japan - Go Hawaii</div>
+
+
+<div class="disc">
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.pitchfork.com%2Fphotos%2F5929a1b6c0084474cd0bfe8c%2F1%3A1%2Fw_600%2F203494bd.jpg&f=1&nofb=1&ipt=18c2fe6dec8d92ddd7ca7d3843703e97978b6ac8ac703eb4701ede4bd770ffbe"/>
+
+</div>
+
+<div class="title">Candy Claws - Ceres & Calypso in the Deep Time</div>
+
+</div>
+
