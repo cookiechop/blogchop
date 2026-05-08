@@ -2,7 +2,7 @@
 title: "Some of my music favorites"
 description: "music music music"
 pubDate: "May 07 2026"
-heroImage: "/blog-placeholder-3.jpg"
+heroImage: "/images/musicposthero.jpg"
 ---
 
 
