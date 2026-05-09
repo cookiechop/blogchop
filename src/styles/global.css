@@ -56,7 +56,7 @@ a, button, input, textarea, select, [role="button"] {
 	cursor: inherit !important;
 }
 main {
-	width: 720px;
+	width: 900px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 2em;
