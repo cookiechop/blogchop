@@ -1,62 +1,93 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+// Header.astro
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-	</nav>
-</header>
-<style>
-	header {
-	width: 950px;
-	height: 25px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 2em;
-	background-color: #faf8f5;
-	/* Box Shading */
-	border-radius: 8px;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1),
-		0 8px 24px rgba(0, 0, 0, 0.05);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+<header class="header-wrapper">
+  <!-- The Banner Image -->
+  <div class="banner">
+    <!-- Replace with your actual image path -->
+    <img 
+      src="/images/header-banner.jpg" 
+      alt="Site Header Banner" 
+      loading="lazy"
+    />
+  </div>
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: #291A1A;
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
+  <!-- The Navigation Bar -->
+  <nav class="navbar">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/blog" class="nav-link">Blog</a>
+    <a href="/about" class="nav-link">About</a>
+  </nav>
+</header>
+
+<style>
+  /* 
+    The wrapper constrains the total width to 950px 
+    and applies the rounded corners to the whole block.
+  */
+  .header-wrapper {
+    width: 950px;
+    max-width: 95%; /* Fallback for small screens */
+    margin: 2em auto; /* Centers the header */
+    border-radius: 12px; /* Rounded corners for the whole group */
+    overflow: hidden; /* Ensures children don't spill out of the radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Optional: subtle lift */
+  }
+
+  /* The Image Section */
+  .banner {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Optional: If you want the image to have a specific height, use object-fit */
+    /* height: 200px; */
+    /* object-fit: cover; */
+  }
+
+  /* The Navigation Bar */
+  .navbar {
+    display: flex;
+    justify-content: center; /* Centers links horizontally */
+    align-items: center;
+    gap: 2em;
+    padding: 0.75em 1em;
+    
+    /* Styling to match your existing theme */
+    background-color: #faf8f5; /* Matches your main background */
+    border-top: 1px solid rgba(96, 115, 159, 0.2); /* Subtle separator */
+    color: rgb(34, 41, 57); /* Matches --gray-dark */
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(34, 41, 57);
+    transition: color 0.2s ease;
+    font-size: 1rem;
+  }
+
+  .nav-link:hover {
+    color: #2337ff; /* Matches --accent */
+  }
+
+  /* Responsive adjustment: On very small screens, 950px won't fit */
+  @media (max-width: 980px) {
+    .header-wrapper {
+      width: 100%;
+      margin: 1em auto;
+      border-radius: 8px;
+    }
+    
+    .navbar {
+      flex-direction: column; /* Stack links vertically on tiny screens if needed */
+      gap: 0.5em;
+    }
+  }
 </style>
