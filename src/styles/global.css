@@ -39,11 +39,7 @@ body {
 	/* Custom Cursor */
 	cursor: url('/images/cursor.png') 32 32, auto !important;
 
-	background-image: url('/images/backgroundimage.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-color: #ffcad4;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: #291A1A;
