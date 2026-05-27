@@ -11,15 +11,15 @@ import '../styles/global.css';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		
-		<!-- THE DOG - Preserved exactly as requested -->
+		/* Dog */
 		<div style="position: fixed; left: 10px; bottom: 10px; z-index: 200;">
 			<img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
 		</div>
 	</head>
 	<body>
 		
-		<!-- NEW NAVIGATION BAR (Replaces <Header /> for now to apply styles) -->
-		<!-- If you want to keep using <Header />, ensure that component has class="nav-bar" -->
+/* Navigation Bar */
+		<!-- To keep using <Header />, ensure that component has class="nav-bar" -->
 		<header class="nav-bar">
 			<a href="/" class="nav-logo">My Blog</a>
 			<nav class="nav-links">
@@ -29,7 +29,7 @@ import '../styles/global.css';
 			</nav>
 		</header>
 
-		<!-- NEW GRID LAYOUT WRAPPER -->
+		<!-- GRID LAYOUT WRAPPER -->
 		<div class="layout-container">
 			
 			<!-- SIDEBAR (Left Column) -->
@@ -44,11 +44,11 @@ import '../styles/global.css';
 				<h3 style="margin-top: 2rem;">Status</h3>
 				<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
 					This site is under construction. 
-					Broken links and bugs are expected!
+					Works best on desktop!
 				</p>
 			</aside>
 
-			<!-- MAIN CONTENT AREA (Right Column) -->
+			<!-- MAIN CONTENT AREA  -->
 			<main class="content-area">
 
 				<img 
@@ -68,6 +68,10 @@ import '../styles/global.css';
 				</p>
 
 				<!-- Optional: Add a decorative image block here if you want -->
+				<img 
+					src="/images/banner.jpg" 
+					style="width: 100%; height: auto; margin-bottom: 2rem;"
+				/>
 				<!-- 
 				<div class="text-block">
 					<p>Future updates will include more content here.</p>
