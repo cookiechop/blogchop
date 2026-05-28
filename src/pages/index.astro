@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import '../styles/global.css'; 
+import Layout from '../layouts/Layout.astro';
 ---
 
 <!doctype html>
@@ -18,73 +19,29 @@ import '../styles/global.css';
 	</head>
 	<body>
 		
-<!-- NAV BAR  -->
-		<!-- To keep using <Header />, ensure that component has class="nav-bar" -->
-		<header class="nav-bar">
-			<a href="/" class="nav-logo">My Blog</a>
-			<nav class="nav-links">
-				<a href="/">Home</a>
-				<a href="/blog">Blog</a>
-				<a href="/about">About</a>
-				<a href="/Puzzles">Puzzles</a>
-			</nav>
-		</header>
 
-		<!-- GRID LAYOUT WRAPPER -->
-		<div class="layout-container">
-			
-			<!-- SIDEBAR (Left Column) -->
-			<aside class="sidebar">
-				<h3>Navigation</h3>
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/blog">Posts</a></li>
-					<li><a href="/puzzles">Puzzles</a></li>
-					<li><a href="/about">About Me</a></li>
-				</ul>
+<Layout title="Welcome to My Blog">
+	<!-- Pass the banner to the 'banner' slot -->
+	<slot name="banner">
+		<img 
+			src="/images/banner.jpg" 
+			alt="Header Banner" 
+			class="featured-image" 
+			style="width: 100%; height: auto; margin-bottom: 2rem;"
+		/>
+	</slot>
 
-				<h3 style="margin-top: 2rem;">Status</h3>
-				<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
-					This site is under construction. 
-					Works best on desktop!
-				</p>
-			</aside>
+	<!-- Default slot content (Text) goes here -->
+	<h1>Welcome to my blog!</h1>
+	<p>
+		I'm intending this to be a creative project that I can build onto overtime as I try to distance myself from popular social media sites. 
+	</p>
+	<p>
+		I am new to coding, so this website is very much under construction, and it will probably be broken a lot of the time!! 
+	</p>
 
-			<!-- MAIN CONTENT AREA  -->
-			<main class="content-area">
-
-				<img 
-					src="/images/banner.jpeg" 
-					alt="Header Banner" 
-					class="featured-image" 
-					style="width: 100%; height: auto; margin-bottom: 2rem;"
-				/>
-				
-				<!-- TEXT CONTENT -->
-				<h1>Welcome to my blog!</h1>
-				<p>
-					I'm intending this to be a creative project that I can build onto overtime as I try to distance myself from popular social media sites. 
-				</p>
-				<p>
-					I am new to coding, so this website is very much under construction, and it will probably be broken a lot of the time!! 
-				</p>
-
-				<!-- Optional: Add a decorative image block here if you want -->
-				<img 
-					src="/images/banner.jpeg" 
-					style="width: 100%; height: auto; margin-bottom: 2rem;"
-				/>
-				<!-- 
-				<div class="text-block">
-					<p>Future updates will include more content here.</p>
-				</div> 
-				-->
-
-			</main>
-		</div>
-
-		<!-- FOOTER -->
-		<Footer />
-
-	</body>
-</html>
+	<!-- Optional second banner if you want one inside the text area too -->
+	<!-- 
+	<img src="/images/banner.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" /> 
+	-->
+</Layout>
