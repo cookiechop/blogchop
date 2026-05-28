@@ -66,12 +66,12 @@ a, button, input, textarea, select, [role="button"] {
 .fixed-sidebar {
 	position: fixed;
 	top: 50%; /* Vertically center */
-	left: 50%; /* Start at center */
+	left: 75px; /* Off to the left */
 	transform: translate(-50%, -50%); /* Shift back by half its width/height to truly center */
 	
-	width: 200px; /* Smaller width */
+	width: 220px; /* Width */
 	height: auto; /* Auto height based on content */
-	max-height: 90vh; /* Don't exceed 90% of screen height */
+	max-height: 85vh; /* Don't touch bottom / top edges */
 	
 	background-color: #f0efb8;
 	border: 3px solid #c9cd7b;
