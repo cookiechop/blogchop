@@ -57,4 +57,210 @@ body {
 	line-height: 1.7;
 }
 
-/* En
+/* Ensure interactive elements inherit the custom cursor */
+a, button, input, textarea, select, [role="button"] {
+	cursor: inherit !important;
+}
+
+/* === FIXED LEFT SIDEBAR NAVIGATION === */
+.fixed-sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 280px;
+	background-color: #f0efb8;
+	border-right: 3px solid #c9cd7b;
+	padding: 2rem 1.5rem;
+	box-sizing: border-box;
+	z-index: 100;
+	overflow-y: auto;
+}
+
+.sidebar-header {
+	margin-bottom: 2rem;
+}
+
+.nav-logo {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.sidebar-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar-links li {
+	margin-bottom: 0.75rem;
+}
+
+.sidebar-links a {
+	color: rgb(var(--gray-dark));
+	text-decoration: none;
+	display: block;
+	padding: 0.5rem;
+	border-radius: 4px;
+	transition: padding-left 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+	color: var(--accent);
+	padding-left: 5px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-status {
+	margin-top: 3rem;
+	font-size: 0.9rem;
+	color: rgb(var(--gray-dark));
+	line-height: 1.5;
+}
+
+.sidebar-status h3 {
+	font-size: 1.25rem;
+	margin-bottom: 1rem;
+	color: var(--accent-dark);
+	border-bottom: 2px solid var(--accent);
+	padding-bottom: 0.5rem;
+}
+
+/* === MAIN CONTENT WRAPPER === */
+.main-content-wrapper {
+	margin-left: 280px; /* Push content right of sidebar */
+	min-height: 100vh;
+}
+
+/* === LAYOUT CONTAINER === */
+.layout-container {
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 0 2rem;
+}
+
+/* === BANNER (Above Sidebar/Main) === */
+.banner-wrapper {
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.featured-image {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	margin: 2rem 0;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* === CONTENT AREA (Cream Card) === */
+.content-area {
+	background-color: #faf8f5;
+	padding: 3em 2em;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
+	min-height: 60vh;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.5rem 0;
+	color: rgb(var(--black));
+	line-height: 1.2;
+}
+h1 { font-size: 3.052em; }
+h2 { font-size: 2.441em; }
+h3 { font-size: 1.953em; }
+h4 { font-size: 1.563em; }
+h5 { font-size: 1.25em; }
+
+strong, b { font-weight: 700; }
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+p { margin-bottom: 1em; }
+.prose p { margin-bottom: 2em; }
+
+/* === FORM ELEMENTS === */
+textarea { width: 100%; font-size: 16px; }
+input { font-size: 16px; }
+table { width: 100%; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+
+/* === CODE BLOCKS === */
+code {
+	padding: 2px 5px;
+	background-color: rgb(var(--gray-light));
+	border-radius: 2px;
+}
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+pre > code { all: unset; }
+
+/* === QUOTES & DIVIDERS === */
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0px;
+	font-size: 1.333em;
+}
+hr {
+	border: none;
+	border-top: 1px solid rgb(var(--gray-light));
+}
+
+/* === DECORATIVE TEXT BLOCK === */
+.text-block {
+	background: rgba(255, 255, 255, 0.6);
+	padding: 1.5rem;
+	border-left: 4px solid var(--accent);
+	margin: 2rem 0;
+	border-radius: 0 8px 8px 0;
+}
+
+/* === ACCESSIBILITY === */
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 900px) {
+	.fixed-sidebar {
+		position: relative;
+		width: 100%;
+		height: auto;
+		border-right: none;
+		border-bottom: 3px solid #c9cd7b;
+	}
+	
+	.main-content-wrapper {
+		margin-left: 0;
+	}
+	
+	.sidebar-status {
+		order: -1; /* Move status to top on mobile */
+	}
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 18px;
+	}
+	.content-area {
+		padding: 1.5em 1em;
+	}
+}
