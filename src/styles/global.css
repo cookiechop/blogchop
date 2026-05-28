@@ -37,7 +37,7 @@ html, body {
 }
 
 body {
-	font-family: "IMFellFrenchCanon", sans-serif;
+	font-family: "Cause", sans-serif;
 	text-align: left;
 	
 	/* Custom Cursor */
@@ -62,11 +62,11 @@ a, button, input, textarea, select, [role="button"] {
 	cursor: inherit !important;
 }
 
-/* === CENTERED FIXED SIDEBAR === */
+/* === SIDEBAR === */
 .fixed-sidebar {
 	position: fixed;
 	top: 50%; /* Vertically center */
-	left: 75px; /* Off to the left */
+	left: 60px; /* Off to the left */
 	transform: translate(-50%, -50%); /* Shift back by half its width/height to truly center */
 	
 	width: 220px; /* Width */
