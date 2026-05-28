@@ -15,15 +15,15 @@
 
 /* Font Definitions */
 @font-face {
-	font-family: "IMFellFrenchCanon";
-	src: url("/fonts/IMFellFrenchCanon-Regular.woff") format("woff");
+	font-family: "Cause";
+	src: url("/fonts/Cause.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: "IMFellFrenchCanon";
-	src: url("/fonts/IMFellFrenchCanon-Italic.woff") format("woff");
+	font-family: "Cause";
+	src: url("/fonts/Cause-Bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
