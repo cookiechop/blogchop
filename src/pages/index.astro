@@ -1,27 +1,9 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import '../styles/global.css'; 
 import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		
-		<!-- DOG  -->
-		<div style="position: fixed; left: 10px; bottom: 10px; z-index: 200;">
-			<img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
-		</div>
-	</head>
-	<body>
-		
-
 <Layout title="Welcome to My Blog">
-	<!-- Pass the banner to the 'banner' slot -->
+	<!-- Banner Slot -->
 	<slot name="banner">
 		<img 
 			src="/images/banner.jpg" 
@@ -31,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
 		/>
 	</slot>
 
-	<!-- Default slot content (Text) goes here -->
+	<!-- Main Content Slot -->
 	<h1>Welcome to my blog!</h1>
 	<p>
 		I'm intending this to be a creative project that I can build onto overtime as I try to distance myself from popular social media sites. 
@@ -39,9 +21,4 @@ import Layout from '../layouts/Layout.astro';
 	<p>
 		I am new to coding, so this website is very much under construction, and it will probably be broken a lot of the time!! 
 	</p>
-
-	<!-- Optional second banner if you want one inside the text area too -->
-	<!-- 
-	<img src="/images/banner.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" /> 
-	-->
 </Layout>
