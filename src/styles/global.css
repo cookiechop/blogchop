@@ -51,7 +51,7 @@ header.nav-bar {
     top: 0;
     z-index: 100;
     background-color: #faf8f5; 
-    border-bottom: 2px solid rgb(var(--gray-light));
+    border-bottom: 2px solid #c9cd7b;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -62,7 +62,7 @@ header.nav-bar {
 .nav-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: rgb(var(--black));
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -72,14 +72,14 @@ header.nav-bar {
 }
 
 .nav-links a {
-    color: rgb(var(--gray));
+    color: var(--accent);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+    color: var(--accent-dark);
 }
 
 /* Main Grid Container */
@@ -97,10 +97,10 @@ header.nav-bar {
 
 /* Sidebar */
 .sidebar {
-    background-color: #fff;
+    background-color: #f0efb8;
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid rgb(var(--gray-light));
+    border: 3px solid #c9cd7b;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     height: fit-content; /* Stays short if content is short */
     position: sticky;
