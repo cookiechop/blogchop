@@ -1,8 +1,8 @@
 
 :root {
-	--accent: #ffcad4;
-	--accent-dark: #d8e2dc;
-	--black: 15, 18, 25;
+	--accent: #5E3800;
+	--accent-dark: #260D00;
+	--black: #5E3800;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
@@ -34,12 +34,11 @@ body {
 	/* Custom Cursor */
 	cursor: url('/images/cursor.png') 32 32, auto !important;
 
-	background-color: #d8e2dc;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: #291A1A;
-	font-size: 20px;
-	line-height: 1.7;
+	background-image: url('/images/bkg.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 a, button, input, textarea, select, [role="button"] {
