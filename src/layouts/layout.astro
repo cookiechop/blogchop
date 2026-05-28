@@ -12,7 +12,7 @@ const { title, description } = Astro.props;
 	<head>
 		<BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
 		
-		<!-- Annoying Dog Easter Egg -->
+		<!-- Annoying Dog -->
 		<div style="position: fixed; left: 10px; bottom: 10px; z-index: 200;">
 			<img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
 		</div>
@@ -28,33 +28,45 @@ const { title, description } = Astro.props;
 				<a href="/Puzzles">Puzzles</a>
 			</nav>
 		</header>
-
-		<!-- GRID LAYOUT WRAPPER -->
+<!-- GRID LAYOUT WRAPPER -->
 		<div class="layout-container">
-			<!-- SIDEBAR -->
-			<aside class="sidebar">
-				<h3>Navigation</h3>
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/blog">Posts</a></li>
-					<li><a href="/puzzles">Puzzles</a></li>
-					<li><a href="/about">About Me</a></li>
-				</ul>
+			
+			<!-- 1. FULL WIDTH BANNER (Moved here, above sidebar/main) -->
+			<div class="banner-wrapper">
+				<slot name="banner" />
+			</div>
 
-				<h3 style="margin-top: 2rem;">Status</h3>
-				<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
-					This site is under construction. 
-					Works best on desktop!
-				</p>
-			</aside>
+			<!-- 2. SIDEBAR AND MAIN CONTENT (Split Columns) -->
+			<div class="columns-wrapper">
+				
+				<!-- SIDEBAR (Left Column) -->
+				<aside class="sidebar">
+					<h3>Navigation</h3>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/blog">Posts</a></li>
+						<li><a href="/puzzles">Puzzles</a></li>
+						<li><a href="/about">About Me</a></li>
+					</ul>
 
-			<!-- MAIN CONTENT AREA -->
-			<main class="content-area">
-				<slot />
-			</main>
+					<h3 style="margin-top: 2rem;">Status</h3>
+					<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
+						This site is under construction. 
+						Works best on desktop!
+					</p>
+				</aside>
+
+				<!-- MAIN CONTENT AREA (Right Column) -->
+				<main class="content-area">
+					<!-- Slot for the rest of your page content (Text, etc) -->
+					<slot />
+				</main>
+
+			</div>
 		</div>
 
 		<!-- FOOTER -->
 		<Footer />
+
 	</body>
 </html>
