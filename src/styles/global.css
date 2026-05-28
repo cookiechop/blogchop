@@ -87,12 +87,6 @@ a, button, input, textarea, select, [role="button"] {
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Optional: Add a subtle hover effect to bring it slightly forward */
-.fixed-sidebar:hover {
-	transform: translate(-50%, -50%) scale(1.02);
-	transition: transform 0.2s ease;
-}
-
 .sidebar-header {
 	margin-bottom: 1.5rem;
 	text-align: center; /* Center logo text */
@@ -206,7 +200,7 @@ a, button, input, textarea, select, [role="button"] {
 
 /* === CONTENT AREA (Cream Card) === */
 .content-area {
-	background-color: #faf8f5;
+	background-color: #f0efb8;
 	padding: 3em 2em;
 	border-radius: 8px;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
