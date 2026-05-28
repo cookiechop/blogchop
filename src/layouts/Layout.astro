@@ -19,7 +19,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		
-		<!-- FIXED LEFT SIDEBAR NAVIGATION -->
+		<!-- FLOATING CENTERED SIDEBAR -->
 		<nav class="fixed-sidebar">
 			<div class="sidebar-header">
 				<a href="/" class="nav-logo">My Blog</a>
@@ -38,20 +38,22 @@ const { title, description } = Astro.props;
 			</div>
 		</nav>
 
-		<!-- MAIN CONTENT AREA (Scrollable) -->
+		<!-- MAIN CONTENT AREA (Centered) -->
 		<div class="main-content-wrapper">
 			
-			<!-- BANNER (Full width at top of content) -->
-			<div class="banner-wrapper">
-				<slot name="banner" />
+			<!-- BANNER -->
+			<div class="layout-container">
+				<div class="banner-wrapper">
+					<slot name="banner" />
+				</div>
+
+				<!-- PAGE CONTENT -->
+				<main class="content-area">
+					<slot />
+				</main>
 			</div>
 
-			<!-- PAGE CONTENT -->
-			<main class="content-area">
-				<slot />
-			</main>
-
-			<!-- FOOTER (Inside the scrollable area) -->
+			<!-- FOOTER -->
 			<Footer />
 		</div>
 
