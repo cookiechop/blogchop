@@ -12,12 +12,13 @@ const { title, description } = Astro.props;
 	<head>
 		<BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
 		
-		<!-- Annoying Dog -->
+		<!-- DOG EASTER EGG -->
 		<div style="position: fixed; left: 10px; bottom: 10px; z-index: 200;">
 			<img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
 		</div>
 	</head>
 	<body>
+		
 		<!-- NAV BAR -->
 		<header class="nav-bar">
 			<a href="/" class="nav-logo">My Blog</a>
@@ -28,18 +29,19 @@ const { title, description } = Astro.props;
 				<a href="/Puzzles">Puzzles</a>
 			</nav>
 		</header>
-<!-- GRID LAYOUT WRAPPER -->
+
+		<!-- GRID LAYOUT WRAPPER -->
 		<div class="layout-container">
 			
-			<!-- 1. FULL WIDTH BANNER (Moved here, above sidebar/main) -->
+			<!-- 1. FULL WIDTH BANNER -->
 			<div class="banner-wrapper">
 				<slot name="banner" />
 			</div>
 
-			<!-- 2. SIDEBAR AND MAIN CONTENT (Split Columns) -->
+			<!-- 2. COLUMNS WRAPPER -->
 			<div class="columns-wrapper">
 				
-				<!-- SIDEBAR (Left Column) -->
+				<!-- SIDEBAR -->
 				<aside class="sidebar">
 					<h3>Navigation</h3>
 					<ul>
@@ -56,14 +58,13 @@ const { title, description } = Astro.props;
 					</p>
 				</aside>
 
-				<!-- MAIN CONTENT AREA (Right Column) -->
+				<!-- MAIN CONTENT -->
 				<main class="content-area">
-					<!-- Slot for the rest of your page content (Text, etc) -->
 					<slot />
 				</main>
 
-			</div>
-		</div>
+			</div> <!-- End columns-wrapper -->
+		</div> <!-- End layout-container -->
 
 		<!-- FOOTER -->
 		<Footer />
