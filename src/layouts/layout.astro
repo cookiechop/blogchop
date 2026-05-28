@@ -19,55 +19,41 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		
-		<!-- NAV BAR -->
-		<header class="nav-bar">
-			<a href="/" class="nav-logo">My Blog</a>
-			<nav class="nav-links">
-				<a href="/">Home</a>
-				<a href="/blog">Blog</a>
-				<a href="/about">About</a>
-				<a href="/Puzzles">Puzzles</a>
-			</nav>
-		</header>
-
-		<!-- GRID LAYOUT WRAPPER -->
-		<div class="layout-container">
+		<!-- FIXED LEFT SIDEBAR NAVIGATION -->
+		<nav class="fixed-sidebar">
+			<div class="sidebar-header">
+				<a href="/" class="nav-logo">My Blog</a>
+			</div>
 			
-			<!-- 1. FULL WIDTH BANNER -->
+			<ul class="sidebar-links">
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/Puzzles">Puzzles</a></li>
+			</ul>
+
+			<div class="sidebar-status">
+				<h3>Status</h3>
+				<p>This site is under construction.<br>Works best on desktop!</p>
+			</div>
+		</nav>
+
+		<!-- MAIN CONTENT AREA (Scrollable) -->
+		<div class="main-content-wrapper">
+			
+			<!-- BANNER (Full width at top of content) -->
 			<div class="banner-wrapper">
 				<slot name="banner" />
 			</div>
 
-			<!-- 2. COLUMNS WRAPPER -->
-			<div class="columns-wrapper">
-				
-				<!-- SIDEBAR -->
-				<aside class="sidebar">
-					<h3>Navigation</h3>
-					<ul>
-						<li><a href="/">Home</a></li>
-						<li><a href="/blog">Posts</a></li>
-						<li><a href="/puzzles">Puzzles</a></li>
-						<li><a href="/about">About Me</a></li>
-					</ul>
+			<!-- PAGE CONTENT -->
+			<main class="content-area">
+				<slot />
+			</main>
 
-					<h3 style="margin-top: 2rem;">Status</h3>
-					<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
-						This site is under construction. 
-						Works best on desktop!
-					</p>
-				</aside>
-
-				<!-- MAIN CONTENT -->
-				<main class="content-area">
-					<slot />
-				</main>
-
-			</div> <!-- End columns-wrapper -->
-		</div> <!-- End layout-container -->
-
-		<!-- FOOTER -->
-		<Footer />
+			<!-- FOOTER (Inside the scrollable area) -->
+			<Footer />
+		</div>
 
 	</body>
 </html>
