@@ -1,0 +1,60 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/global.css';
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
+		
+		<!-- Annoying Dog Easter Egg -->
+		<div style="position: fixed; left: 10px; bottom: 10px; z-index: 200;">
+			<img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
+		</div>
+	</head>
+	<body>
+		<!-- NAV BAR -->
+		<header class="nav-bar">
+			<a href="/" class="nav-logo">My Blog</a>
+			<nav class="nav-links">
+				<a href="/">Home</a>
+				<a href="/blog">Blog</a>
+				<a href="/about">About</a>
+				<a href="/Puzzles">Puzzles</a>
+			</nav>
+		</header>
+
+		<!-- GRID LAYOUT WRAPPER -->
+		<div class="layout-container">
+			<!-- SIDEBAR -->
+			<aside class="sidebar">
+				<h3>Navigation</h3>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog">Posts</a></li>
+					<li><a href="/puzzles">Puzzles</a></li>
+					<li><a href="/about">About Me</a></li>
+				</ul>
+
+				<h3 style="margin-top: 2rem;">Status</h3>
+				<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
+					This site is under construction. 
+					Works best on desktop!
+				</p>
+			</aside>
+
+			<!-- MAIN CONTENT AREA -->
+			<main class="content-area">
+				<slot />
+			</main>
+		</div>
+
+		<!-- FOOTER -->
+		<Footer />
+	</body>
+</html>
