@@ -281,6 +281,51 @@ hr {
 	}
 }
 
+/* --- NEW LAYOUT STYLES --- */
+
+.layout-container {
+	/* Ensure the container holds the children properly */
+	display: flex;
+	flex-direction: column; /* Stack banner on top of columns */
+	max-width: 100%;
+}
+
+.banner-wrapper {
+	/* Full width banner area */
+	width: 100%;
+	margin-bottom: 2rem; /* Space between banner and sidebar/text */
+}
+
+.columns-wrapper {
+	/* The container for Sidebar + Main Content */
+	display: flex;
+	gap: 2rem; /* Space between sidebar and main text */
+	align-items: flex-start; /* Align tops of columns */
+}
+
+.sidebar {
+	/* Sidebar width */
+	flex: 0 0 250px; /* Fixed width of 250px, don't grow/shrink */
+}
+
+.content-area {
+	/* Main content takes remaining space */
+	flex: 1; 
+	min-width: 0; /* Prevents overflow issues */
+}
+
+/* Responsive: Stack sidebar below content on mobile */
+@media (max-width: 768px) {
+	.columns-wrapper {
+		flex-direction: column;
+	}
+	.sidebar {
+		flex: none;
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+}
+
 .sr-only {
 	border: 0;
 	padding: 0;
