@@ -7,20 +7,20 @@
   <div class="banner">
     <!-- Replace with your actual image path -->
     <img 
-      src="/images/banner.jpg" 
+      src="/images/banner.jpeg" 
       alt="Site Header Banner" 
       loading="lazy"
     />
   </div>
 
-  <!-- The Solid Color Bar -->
+  <!-- Solid Color Bar -->
   <div class="color-bar"></div>
 
-  <!-- The Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <a href="/" class="nav-link">Home</a>
+    <a href="/index" class="nav-link">Home</a>
     <a href="/blog" class="nav-link">Blog</a>
-    <a href="/about" class="nav-link">About</a>
+    <a href="/newsletter" class="nav-link">Newsletter</a>
     <a href="/puzzles" class="nav-link">Puzzles</a>
   </nav>
 </header>
@@ -52,13 +52,6 @@
     object-fit: cover;
   }
 
-/* The Solid Color Bar */
-  .color-bar {
-    width: 100%;
-    height: 12px; /* Adjust thickness as desired */
-    background-color: #ffcad4;
-  }
-
   /* The Navigation Bar */
   .navbar {
     display: flex;
@@ -66,17 +59,17 @@
     align-items: center;
     gap: 2em;
     padding: 0.75em 1em;
-    
-    /* Styling to match your existing theme */
-    background-color: #ffe5d9; /* Matches your main background */
-    border-top: 1px solid rgba(96, 115, 159, 0.2); /* Subtle separator */
-    color: rgb(34, 41, 57); /* Matches --gray-dark */
+
+  /* COLORS */
+    background-color: #f0efb8; /* Matches your main background */
+    border-top: 3px solid #c9cd7b; /* Subtle separator */
+    color: #c9cd7b
   }
 
   .nav-link {
     text-decoration: none;
     font-weight: 500;
-    color: #9d8189;
+    color: #260D00;
     transition: color 0.2s ease;
     font-size: 1rem;
   }
