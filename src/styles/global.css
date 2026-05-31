@@ -65,8 +65,8 @@ a, button, input, textarea, select, [role="button"] {
 /* === SIDEBAR === */
 .fixed-sidebar {
 	position: fixed;
-	top: 5%; /* Vertically center */
-	left: 90px; /* Off to the left */
+	top: 7%; /* Vertically center */
+	left: 130px; /* Off to the left */
 	
 	width: 220px; /* Width */
 	height: auto; /* Auto height based on content */
