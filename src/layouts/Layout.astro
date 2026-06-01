@@ -23,6 +23,16 @@ const { title, description } = Astro.props;
 
 <!-- MAIN LAYOUT WRAPPER -->
 	<div class="layout-container">
+
+	<!-- 1. BANNER -->
+    <div class="banner-wrapper">
+        <img 
+            src="/images/banner.jpeg" 
+            alt="Header Banner" 
+            class="featured-image" 
+            style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+        />
+    </div>
 			
 		<!-- SIDEBAR -->
 			<aside class="sidebar">
@@ -43,13 +53,6 @@ const { title, description } = Astro.props;
 
 <!-- MAIN CONTENT AREA -->
 	<main class="content-area">
-				
-	<!-- Banner Image -->
-				<img 
-					src="/images/banner.jpeg" 
-					alt="Header Banner" 
-					class="featured-image" 
-				/>
 				
 				<!-- Text Content -->
 				<h1>Welcome to my blog!</h1>
