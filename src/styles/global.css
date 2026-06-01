@@ -118,7 +118,7 @@ header.nav-bar {
 	.banner-wrapper {
 	    /* Span across BOTH columns (Sidebar + Content) */
 	    grid-column: 1 / -1; 
-	    margin-bottom: 2rem; /* Space between banner and the row below */
+	    margin-bottom: 0.5rem; /* Space between banner and the row below */
 	}
 
 
