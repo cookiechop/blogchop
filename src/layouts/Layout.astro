@@ -13,50 +13,58 @@ const { title, description } = Astro.props;
 	<head>
 		<BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
 		
-		<!-- DOG EASTER EGG -->
+<!-- DOG  -->
 		<div style="position: fixed; left: 10px; bottom: 10px; z-index: 200;">
 			<img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
-		</div>
-	</head>
-	<body>
+			</div>
+				</head>
+					<body>
 		
-		<!-- FLOATING CENTERED SIDEBAR -->
-		<nav class="fixed-sidebar">
-			<div class="sidebar-header">
-				<a href="/" class="nav-logo">My Blog</a>
-			</div>
+
+<!-- MAIN LAYOUT WRAPPER -->
+	<div class="layout-container">
 			
-			<ul class="sidebar-links">
-				<li><a href="/index">Home</a></li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/newsletter">Newsletter</a></li>
-				<li><a href="/puzzles">Puzzles</a></li>
-			</ul>
+		<!-- SIDEBAR -->
+			<aside class="sidebar">
+				<h3>Navigation</h3>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog">Posts</a></li>
+					<li><a href="/puzzles">Puzzles</a></li>
+					<li><a href="/about">About Me</a></li>
+				</ul>
 
-			<div class="sidebar-status">
-				<h3>Status</h3>
-				<p>This site is under construction.<br>Works best on desktop!</p>
-			</div>
-		</nav>
+				<h3 style="margin-top: 2rem;">Status</h3>
+				<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
+					This site is under construction. 
+					Works best on desktop!
+				</p>
+			</aside>
 
-		<!-- MAIN CONTENT AREA (Centered) -->
-		<div class="main-content-wrapper">
-			
-			<!-- BANNER -->
-			<div class="layout-container">
-				<div class="banner-wrapper">
-					<slot name="banner" />
-				</div>
+<!-- MAIN CONTENT AREA -->
+	<main class="content-area">
+				
+	<!-- Banner Image -->
+				<img 
+					src="/images/banner.jpg" 
+					alt="Header Banner" 
+					class="featured-image" 
+				/>
+				
+				<!-- Text Content -->
+				<h1>Welcome to my blog!</h1>
+				<p>
+					I'm intending this to be a creative project that I can build onto overtime as I try to distance myself from popular social media sites. 
+				</p>
+				<p>
+					I am new to coding, so this website is very much under construction, and it will probably be broken a lot of the time!! 
+				</p>
 
-				<!-- PAGE CONTENT -->
-				<main class="content-area">
-					<slot />
-				</main>
-			</div>
-
-			<!-- FOOTER -->
-			<Footer />
+			</main>
 		</div>
+
+		<!-- FOOTER -->
+		<Footer />
 
 	</body>
 </html>
