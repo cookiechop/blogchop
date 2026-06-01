@@ -44,19 +44,18 @@ const { title, description } = Astro.props;
 			
 		<!-- SIDEBAR -->
 			<aside class="sidebar">
-				<h4>Menu</h4>
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/blog">Blog</a></li>
-					<li><a href="/puzzles">Puzzles</a></li>
-					<li><a href="/newsletter">Newsletter</a></li>
-				</ul>
-
-				<h4 style="margin-top: 0.5rem;">Status</h4>
-				<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
-					This site is under construction. 
-					Works best on desktop!
-				</p>
+			    <h4>Menu</h4>
+			    <nav class="sidebar-nav">
+			        <a href="/" class="sidebar-btn">Home</a>
+			        <a href="/blog" class="sidebar-btn">Blog</a>
+			        <a href="/puzzles" class="sidebar-btn">Puzzles</a>
+			        <a href="/newsletter" class="sidebar-btn">Newsletter</a>
+			    </nav>
+			    <h4 style="margin-top: 1.5rem;">Status</h4>
+			    <p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
+			        This site is under construction.
+			        Works best on desktop!
+			    </p>
 			</aside>
 
 <!-- MAIN CONTENT AREA -->
