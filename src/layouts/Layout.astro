@@ -28,10 +28,18 @@ const { title, description } = Astro.props;
         <img 
             src="/images/banner.jpeg" 
             alt="Header Banner" 
-            class="featured-image" 
-            style="margin: 0 !important; padding: 0 !important; display: block;"
-        />
-    </div>
+            class="featured-image"
+			style="
+	            width: 100%; 
+	            height: auto; 
+	            border-radius: 8px; 
+	            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	            margin: 0 !important; 
+	            padding: 0 !important;
+	            display: block;
+	        "
+    	/>
+		</div>
 			
 		<!-- SIDEBAR -->
 			<aside class="sidebar">
