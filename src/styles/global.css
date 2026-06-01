@@ -60,7 +60,35 @@ a, button, input, textarea, select, [role="button"] {
 	cursor: inherit !important;
 }
 
+
+/* === SIDEBAR NAV BUTTONS === */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;        /* fully rounded pill shape */
+    background-color: #f0efb8;
+    border: 2px solid #c9cd7b;
+    color: var(--accent);
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-btn:hover {
+    background-color: #c9cd7b;
+    color: #260D00;
+}
+
 /* === NAVIGATION BAR === */
+
 header.nav-bar {
 	position: sticky;
 	top: 0;
@@ -94,8 +122,9 @@ header.nav-bar {
 }
 
 .nav-links a:hover {
-	color: var(--accent-alt); /* renamed from --accent-alt */
+	color: var(--accent-alt);
 }
+
 
 /* === MAIN LAYOUT (GRID) === */
 .layout-container {
