@@ -1,11 +1,11 @@
 :root {
 	--accent: #5E3800;
-	--accent-dark: #afe0dc;
-	--brown: #5E3800;        /* renamed from --black */
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+	--accent-alt: #afe0dc;        
+	--brown: #5E3800;            
+	--gray: 96, 115, 159;         
+	--gray-light: 229, 233, 240;  
+	--gray-dark: 34, 41, 57;      
+	--gray-gradient: rgba(var(--gray-light), 50%), rgba(229, 233, 240, 0);
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
@@ -46,7 +46,7 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-attachment: fixed; /* overridden to scroll on mobile below */
 
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -94,7 +94,7 @@ header.nav-bar {
 }
 
 .nav-links a:hover {
-	color: var(--accent-dark);
+	color: var(--accent-alt); /* renamed from --accent-dark */
 }
 
 /* === MAIN LAYOUT (GRID) === */
@@ -102,7 +102,7 @@ header.nav-bar {
 	width: 100%;
 	max-width: 1200px;
 	margin: 2rem auto;
-	padding: 0 2rem;        /* keeps side padding for sidebar/content */
+	padding: 0 2rem;
 
 	/* GRID SETUP */
 	display: grid;
@@ -112,15 +112,13 @@ header.nav-bar {
 }
 
 /* === BANNER WRAPPER === */
-/* 
-  FIX: The banner spans the full grid width but was inheriting the 
-  layout-container's padding, pushing it inward on mobile.
-  Negative margins cancel the parent padding so the banner bleeds
-  edge-to-edge inside the container.
+/*
+  The banner spans the full grid width. Negative margins cancel the
+  parent padding so the banner bleeds edge-to-edge inside the container.
 */
 .banner-wrapper {
 	grid-column: 1 / -1;
-	margin: 0 -2rem !important; /* cancels the layout-container padding */
+	margin: 0 -2rem !important;
 	padding: 0 !important;
 }
 
@@ -158,6 +156,16 @@ header.nav-bar {
 }
 
 /* === IMAGES & DECORATIVE ELEMENTS === */
+/*
+  Scoped to .content-area so the global border-radius doesn't
+  accidentally affect the dog gif, banner, or other site images.
+*/
+.content-area img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
 .post-image {
 	width: 100%;
 	height: auto;
@@ -193,7 +201,7 @@ h5 { font-size: 1.25em; }
 
 strong, b { font-weight: 700; }
 a { color: var(--accent); }
-a:hover { color: var(--accent-dark); }
+a:hover { color: var(--accent-alt); } /* renamed from --accent-dark */
 p { margin-bottom: 1em; }
 .prose p { margin-bottom: 2em; }
 
@@ -201,7 +209,6 @@ p { margin-bottom: 1em; }
 textarea { width: 100%; font-size: 16px; }
 input { font-size: 16px; }
 table { width: 100%; }
-img { max-width: 100%; height: auto; border-radius: 8px; }
 
 /* === CODE BLOCKS === */
 code {
@@ -243,24 +250,30 @@ hr {
 
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 900px) {
-	.layout-container {
-		grid-template-columns: 1fr; /* Stack sidebar and content */
-		padding: 0 1rem; /* reduce side padding on mobile */
+	body {
+		/* Fix: background-attachment: fixed breaks on iOS Safari and most
+		   mobile browsers, causing a zoomed/static background appearance */
+		background-attachment: scroll;
 	}
 
-	/* re-sync banner negative margin with reduced mobile padding */
+	.layout-container {
+		grid-template-columns: 1fr;
+		padding: 0 1rem;
+	}
+
+	/* Re-sync banner negative margin with reduced mobile padding */
 	.banner-wrapper {
 		margin: 0 -1rem !important;
 	}
 
 	.sidebar {
 		position: static;
-		order: -1; /* Move sidebar to top on mobile */
+		order: -1;
 		margin-bottom: 2rem;
 	}
 
 	.content-area {
-		grid-column: 1; /* full width on mobile */
+		grid-column: 1;
 	}
 
 	header.nav-bar {
