@@ -1,6 +1,5 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import '../styles/global.css';
@@ -18,8 +17,8 @@ const { title, description } = Astro.props;
 			<img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
 			</div>
 				</head>
-					<body>
-		
+
+<body style="margin: 0; padding: 0;">
 
 <!-- MAIN LAYOUT WRAPPER -->
 	<div class="layout-container">
@@ -30,7 +29,7 @@ const { title, description } = Astro.props;
             src="/images/banner.jpeg" 
             alt="Header Banner" 
             class="featured-image" 
-            style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+            style="margin: 0 !important; padding: 0 !important; display: block;"
         />
     </div>
 			
