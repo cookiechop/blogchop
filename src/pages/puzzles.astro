@@ -1,30 +1,15 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import '../styles/global.css';
-import Layout from '../src/layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<div style="position: fixed; left: 10px; bottom: 10px; z-index: 200;">
-  <img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
-</div>
-	<body>
-		<Header />
-		<main>
-			<h1>Welcome to my blog!!</h1>
-			<p>
-				This is where I will be posting crossword puzzles! 
-			</p>
-			<p>
-				Stay tuned...
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout
+	title="Puzzles"
+	description="Puzzles here"
+>
+	<!-- This content will go inside the <main class="content-area"> in the Layout -->
+	<h1Puzzles</h1>
+	
+	<p>
+	This is where I will be posting puzzles!
+	</p>
+</Layout>
