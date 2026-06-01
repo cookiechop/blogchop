@@ -108,7 +108,7 @@ header.nav-bar {
     /* GRID SETUP */
     display: grid;
     grid-template-columns: 280px 1fr; /* Sidebar | Content */
-    gap: 3.5rem; /* CHANGE THIS VALUE TO MOVE SIDEBAR RIGHT (e.g., 4rem, 5rem) */
+    gap: 4rem; /* CHANGE THIS VALUE TO MOVE SIDEBAR RIGHT (e.g., 4rem, 5rem) */
 }
 
 /* === SIDEBAR === */
