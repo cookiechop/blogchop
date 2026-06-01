@@ -67,7 +67,7 @@ header.nav-bar {
     z-index: 100;
     background-color: #faf8f5; 
     border-bottom: 2px solid #c9cd7b;
-    padding: 1rem 2rem;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
