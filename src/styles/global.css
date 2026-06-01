@@ -1,10 +1,10 @@
 :root {
 	--accent: #5E3800;
-	--accent-dark: #afe0dc; /* Note: Your original had this as light teal, kept as is */
-	--black: #5E3800;
+	--accent-dark: #afe0dc;
+	--brown: #5E3800;        /* renamed from --black */
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;	
+	--gray-dark: 34, 41, 57;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
@@ -37,23 +37,23 @@ html, body {
 body {
 	font-family: "Cause", sans-serif;
 	text-align: left;
-	
+
 	/* Custom Cursor */
 	cursor: url('/images/cursor.png') 32 32, auto !important;
-	
+
 	/* Background Image */
-			background-image: url('/images/bkg.jpeg');
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			
-			word-wrap: break-word;
-			overflow-wrap: break-word;
-			color: #291A1A;
-			font-size: 20px;
-			line-height: 1.7;
-		}
+	background-image: url('/images/bkg.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	color: #291A1A;
+	font-size: 20px;
+	line-height: 1.7;
+}
 
 /* Ensure interactive elements inherit the custom cursor */
 a, button, input, textarea, select, [role="button"] {
@@ -62,115 +62,127 @@ a, button, input, textarea, select, [role="button"] {
 
 /* === NAVIGATION BAR === */
 header.nav-bar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: #faf8f5; 
-    border-bottom: 2px solid #c9cd7b;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-color: #faf8f5;
+	border-bottom: 2px solid #c9cd7b;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent);
-    text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--accent);
+	text-decoration: none;
 }
 
 .nav-links {
-    display: flex;
-    gap: 1.5rem;
+	display: flex;
+	gap: 1.5rem;
 }
 
 .nav-links a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent-dark);
+	color: var(--accent-dark);
 }
 
 /* === MAIN LAYOUT (GRID) === */
-	.layout-container {
-	    width: 100%;
-	    max-width: 1200px; 
-	    margin: 2rem auto;
-	    padding: 0 2rem;
-	    
-	    /* GRID SETUP */
-	    display: grid;
-	    /* We define 2 columns: Sidebar (280px) and Content (1fr) */
-	    grid-template-columns: 280px 1fr; 
-	    gap: 2rem; 
-	    grid-auto-flow: dense; 
-	}
+.layout-container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 0 2rem;        /* keeps side padding for sidebar/content */
+
+	/* GRID SETUP */
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 2rem;
+	grid-auto-flow: dense;
+}
 
 /* === BANNER WRAPPER === */
-	.banner-wrapper {
-	    grid-column: 1 / -1; 
-	    margin: 0 !important;
-		padding-top: 0 !important; 
-	}
+/* 
+  FIX: The banner spans the full grid width but was inheriting the 
+  layout-container's padding, pushing it inward on mobile.
+  Negative margins cancel the parent padding so the banner bleeds
+  edge-to-edge inside the container.
+*/
+.banner-wrapper {
+	grid-column: 1 / -1;
+	margin: 0 -2rem !important; /* cancels the layout-container padding */
+	padding: 0 !important;
+}
 
+.banner-wrapper img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
 /* === SIDEBAR === */
-		.sidebar {
-		    background-color: #f0efb8;
-		    padding: 1.5rem;
-		    border-radius: 8px;
-		    border: 3px solid #c9cd7b;
-		    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-		    height: fit-content;
-		    position: sticky;
-		    top: 80px;
-		}
+.sidebar {
+	background-color: #f0efb8;
+	padding: 1.5rem;
+	border-radius: 8px;
+	border: 3px solid #c9cd7b;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+	height: fit-content;
+	position: sticky;
+	top: 80px;
+}
 
 /* === CONTENT AREA === */
 .content-area {
-    background-color: #f0efb8;
+	background-color: #f0efb8;
 	grid-column: 2 / 3;
-    padding: 3em 2em;
-    border-radius: 8px;
+	padding: 3em 2em;
+	border-radius: 8px;
 	border: 3px solid #c9cd7b;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
-    min-height: 60vh;
-    max-width: 900px; /* Constrains content width */
-    margin: 0 auto; /* Centers content within grid cell */
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
+	min-height: 60vh;
+	max-width: 900px;
+	margin: 0 auto;
 }
 
 /* === IMAGES & DECORATIVE ELEMENTS === */
 .post-image {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin: 1rem;
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+	margin: 1rem;
 }
 
 .banner-wrapper .post-image {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: block;
+	margin: 0 !important;
+	padding: 0 !important;
+	display: block;
 }
 
 .text-block {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 1.5rem;
-    border-left: 4px solid var(--accent);
-    margin: 2rem 0;
-    border-radius: 0 8px 8px 0;
+	background: rgba(255, 255, 255, 0.6);
+	padding: 1.5rem;
+	border-left: 4px solid var(--accent);
+	margin: 2rem 0;
+	border-radius: 0 8px 8px 0;
 }
 
 /* === TYPOGRAPHY === */
 h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 0.5rem 0;
-	color: var(--black); /* Using your black variable */
+	color: var(--brown); /* renamed from --black */
 	line-height: 1.2;
 }
 h1 { font-size: 3.052em; }
@@ -204,55 +216,65 @@ pre {
 pre > code { all: unset; }
 
 /* === QUOTES & DIVIDERS === */
-		blockquote {
-			border-left: 4px solid var(--accent);
-			padding: 0 0 0 20px;
-			margin: 0px;
-			font-size: 1.333em;
-		}
-		hr {
-			border: none;
-			border-top: 1px solid rgb(var(--gray-light));
-		}
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0px;
+	font-size: 1.333em;
+}
+hr {
+	border: none;
+	border-top: 1px solid rgb(var(--gray-light));
+}
 
 /* === ACCESSIBILITY === */
-		.sr-only {
-			border: 0;
-			padding: 0;
-			margin: 0;
-			position: absolute !important;
-			height: 1px;
-			width: 1px;
-			overflow: hidden;
-			clip: rect(1px, 1px, 1px, 1px);
-			clip-path: inset(50%);
-			white-space: nowrap;
-		}
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
 
 /* === RESPONSIVE ADJUSTMENTS === */
-		@media (max-width: 900px) {
-			.layout-container {
-				grid-template-columns: 1fr; /* Stack sidebar and content */
-			}
-			
-			.sidebar {
-				position: static;
-				order: -1; /* Move sidebar to top on mobile */
-				margin-bottom: 2rem;
-			}
-			
-			header.nav-bar {
-				flex-direction: column;
-				gap: 1rem;
-				padding: 1rem;
-			}
-		}
-		
-		@media (max-width: 720px) {
-			body {
-				font-size: 18px;
-			}
-			.content-area {
-				padding: 1.5em 1em;
-			}
+@media (max-width: 900px) {
+	.layout-container {
+		grid-template-columns: 1fr; /* Stack sidebar and content */
+		padding: 0 1rem; /* reduce side padding on mobile */
+	}
+
+	/* re-sync banner negative margin with reduced mobile padding */
+	.banner-wrapper {
+		margin: 0 -1rem !important;
+	}
+
+	.sidebar {
+		position: static;
+		order: -1; /* Move sidebar to top on mobile */
+		margin-bottom: 2rem;
+	}
+
+	.content-area {
+		grid-column: 1; /* full width on mobile */
+	}
+
+	header.nav-bar {
+		flex-direction: column;
+		gap: 1rem;
+		padding: 1rem;
+	}
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 18px;
+	}
+	.content-area {
+		padding: 1.5em 1em;
+	}
 }
