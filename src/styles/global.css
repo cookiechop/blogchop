@@ -106,25 +106,38 @@ header.nav-bar {
     
     /* GRID SETUP */
     display: grid;
-    grid-template-columns: 280px 1fr; /* Sidebar | Content */
-    gap: 1rem; 
+    /* We define 2 columns: Sidebar (280px) and Content (1fr) */
+    grid-template-columns: 280px 1fr; 
+    gap: 2rem; 
+    
+    /* IMPORTANT: Allow the banner to span both columns */
+    grid-auto-flow: dense; 
 }
 
+/* === BANNER WRAPPER === */
+	.banner-wrapper {
+	    /* Span across BOTH columns (Sidebar + Content) */
+	    grid-column: 1 / -1; 
+	    margin-bottom: 2rem; /* Space between banner and the row below */
+	}
+
+
 /* === SIDEBAR === */
-.sidebar {
-    background-color: #f0efb8;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 3px solid #c9cd7b;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    height: fit-content;
-    position: sticky;
-    top: 80px;
-}
+		.sidebar {
+		    background-color: #f0efb8;
+		    padding: 1.5rem;
+		    border-radius: 8px;
+		    border: 3px solid #c9cd7b;
+		    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+		    height: fit-content;
+		    position: sticky;
+		    top: 80px;
+		}
 
 /* === CONTENT AREA === */
 .content-area {
-    background-color: #faf8f5;
+    background-color: #f0efb8;
+	grid-column: 2 / 3;
     padding: 3em 2em;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
