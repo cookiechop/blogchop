@@ -75,15 +75,15 @@ a, button, input, textarea, select, [role="button"] {
     text-align: center;
     padding: 0.5rem 1rem;
     border-radius: 999px;        /* fully rounded pill shape */
-    background-color: #f0efb8;
-    border: 2px solid #c9cd7b;
+    background-color: #fcabcb;
+    border: 2px solid #c17d99;
     color: var(--accent);
     font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .sidebar-btn:hover {
-    background-color: #c9cd7b;
+    background-color: #f9d4e3;
     color: #260D00;
 }
 
