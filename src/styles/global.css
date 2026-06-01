@@ -107,7 +107,7 @@ header.nav-bar {
     /* GRID SETUP */
     display: grid;
     grid-template-columns: 280px 1fr; /* Sidebar | Content */
-    gap: 2rem; /* Reduced from 4rem to make sidebar hug closer */
+    gap: 1rem; 
 }
 
 /* === SIDEBAR === */
