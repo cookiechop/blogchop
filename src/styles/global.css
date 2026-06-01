@@ -2,8 +2,8 @@
 
 :root {
 	--accent: #5E3800;
-	--accent-dark: #afe0dc;
-	--black: #5E3800;
+	--accent-dark: #260D00;
+	--black: 94, 56, 0;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
@@ -15,41 +15,32 @@
 
 /* Font Definitions */
 @font-face {
-	font-family: "Cause";
-	src: url("/fonts/Cause.woff") format("woff");
+	font-family: "IMFellFrenchCanon";
+	src: url("/fonts/IMFellFrenchCanon-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: "Cause";
-	src: url("/fonts/Cause-Bold.woff") format("woff");
+	font-family: "IMFellFrenchCanon";
+	src: url("/fonts/IMFellFrenchCanon-Italic.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 
 /* === GLOBAL BODY STYLES === */
-html, body {
-	height: 100%;
+body {
+	font-family: "IMFellFrenchCanon", sans-serif;
 	margin: 0;
 	padding: 0;
-}
-
-body {
-	font-family: "Cause", sans-serif;
 	text-align: left;
-	
-	/* Custom Cursor */
 	cursor: url('/images/cursor.png') 32 32, auto !important;
-	
-	/* Background Image */
 	background-image: url('/images/bkg.jpeg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: #291A1A;
@@ -57,104 +48,100 @@ body {
 	line-height: 1.7;
 }
 
-/* Ensure interactive elements inherit the custom cursor */
+/* Interactive elements inherit custom cursor */
 a, button, input, textarea, select, [role="button"] {
 	cursor: inherit !important;
 }
 
-/* === SIDEBAR === */
-.fixed-sidebar {
-	position: fixed;
-	top: 7%; /* Vertically center */
-	left: 130px; /* Off to the left */
-	
-	width: 220px; /* Width */
-	height: auto; /* Auto height based on content */
-	max-height: 85vh; /* Don't touch bottom / top edges */
-	
-	background-color: #f0efb8;
-	border: 3px solid #c9cd7b;
-	border-radius: 12px; /* Rounded corners for a floating look */
-	padding: 1.5rem;
-	box-sizing: border-box;
+/* === NAVIGATION BAR === */
+header.nav-bar {
+	position: sticky;
+	top: 0;
 	z-index: 100;
-	
-	/* Scroll if content is too tall */
-	overflow-y: auto;
-	
-	/* Shadow for depth */
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.sidebar-header {
-	margin-bottom: 1.5rem;
-	text-align: center; /* Center logo text */
+	background-color: #faf8f5;
+	border-bottom: 2px solid #c9cd7b;
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .nav-logo {
-	font-size: 1.25rem; /* Slightly smaller logo */
+	font-size: 1.5rem;
 	font-weight: 700;
 	color: var(--accent);
 	text-decoration: none;
-	display: block;
 }
 
-.sidebar-links {
+.nav-links {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.nav-links a {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+	color: var(--accent-dark);
+}
+
+/* === MAIN LAYOUT (GRID) === */
+.layout-container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 0 2rem;
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 4rem; /* Adjust this to move sidebar left/right */
+}
+
+/* === SIDEBAR === */
+.sidebar {
+	background-color: #f0efb8;
+	padding: 1.5rem;
+	border-radius: 8px;
+	border: 3px solid #c9cd7b;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+	height: fit-content;
+	position: sticky;
+	top: 80px;
+}
+
+.sidebar h3 {
+	font-size: 1.25rem;
+	margin-bottom: 1rem;
+	color: var(--accent-dark);
+	border-bottom: 2px solid var(--accent);
+	padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
-.sidebar-links li {
-	margin-bottom: 0.5rem;
+.sidebar li {
+	margin-bottom: 0.75rem;
 }
 
-.sidebar-links a {
+.sidebar a {
 	color: rgb(var(--gray-dark));
 	text-decoration: none;
 	display: block;
-	padding: 0.5rem;
-	border-radius: 4px;
-	text-align: center; /* Center links */
-	transition: background 0.2s, color 0.2s;
-	font-size: 0.95rem;
+	padding: 0.25rem 0;
+	transition: padding-left 0.2s ease, color 0.2s ease;
 }
 
-.sidebar-links a:hover {
+.sidebar a:hover {
 	color: var(--accent);
-	background-color: rgba(255, 255, 255, 0.4);
-}
-
-.sidebar-status {
-	margin-top: 1.5rem;
-	font-size: 0.85rem;
-	color: rgb(var(--gray-dark));
-	line-height: 1.4;
-	text-align: center;
-	border-top: 1px solid rgba(0,0,0,0.1);
-	padding-top: 1rem;
-}
-
-/* === MAIN CONTENT WRAPPER (Centered) === */
-.main-content-wrapper {
-	/* No margin-left needed since sidebar is floating in center */
-	max-width: 900px; /* Constrain content width */
-	margin: 0 auto; /* Center the content block */
-	padding: 2rem; /* Padding around the content area */
-	min-height: 100vh;
-}
-
-
-/* === LAYOUT CONTAINER === */
-.layout-container {
-	/* Removed max-width here, handled by main-content-wrapper */
-	width: 100%;
-}
-
-/* === BANNER === */
-.banner-wrapper {
-	width: 100%;
-	margin-bottom: 2rem;
+	padding-left: 5px;
 }
 
 /* === CONTENT AREA === */
@@ -166,29 +153,7 @@ a, button, input, textarea, select, [role="button"] {
 	min-height: 60vh;
 }
 
-/* === RESPONSIVE: Move sidebar to bottom on mobile === */
-@media (max-width: 768px) {
-	.fixed-sidebar {
-		position: relative;
-		top: auto;
-		left: auto;
-		transform: none;
-		width: 100%;
-		max-height: none;
-		margin-bottom: 2rem;
-		border-radius: 8px;
-	}
-	
-	.main-content-wrapper {
-		padding: 1rem;
-	}
-}
-/* === BANNER (Above Sidebar/Main) === */
-.banner-wrapper {
-	width: 100%;
-	margin-bottom: 2rem;
-}
-
+/* === IMAGES & DECORATIVE ELEMENTS === */
 .featured-image {
 	width: 100%;
 	height: auto;
@@ -198,13 +163,12 @@ a, button, input, textarea, select, [role="button"] {
 	border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* === CONTENT AREA === */
-.content-area {
-	background-color: #f0efb8;
-	padding: 3em 2em;
-	border-radius: 8px;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
-	min-height: 60vh;
+.text-block {
+	background: rgba(255, 255, 255, 0.6);
+	padding: 1.5rem;
+	border-left: 4px solid var(--accent);
+	margin: 2rem 0;
+	border-radius: 0 8px 8px 0;
 }
 
 /* === TYPOGRAPHY === */
@@ -225,7 +189,7 @@ a:hover { color: var(--accent-dark); }
 p { margin-bottom: 1em; }
 .prose p { margin-bottom: 2em; }
 
-/* === FORM ELEMENTS === */
+/* === FORMS & TABLES === */
 textarea { width: 100%; font-size: 16px; }
 input { font-size: 16px; }
 table { width: 100%; }
@@ -255,15 +219,6 @@ hr {
 	border-top: 1px solid rgb(var(--gray-light));
 }
 
-/* === DECORATIVE TEXT BLOCK === */
-.text-block {
-	background: rgba(255, 255, 255, 0.6);
-	padding: 1.5rem;
-	border-left: 4px solid var(--accent);
-	margin: 2rem 0;
-	border-radius: 0 8px 8px 0;
-}
-
 /* === ACCESSIBILITY === */
 .sr-only {
 	border: 0;
@@ -273,7 +228,6 @@ hr {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	clip: rect(1px 1px 1px 1px);
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
 	white-space: nowrap;
@@ -281,20 +235,20 @@ hr {
 
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 900px) {
-	.fixed-sidebar {
-		position: relative;
-		width: 100%;
-		height: auto;
-		border-right: none;
-		border-bottom: 3px solid #c9cd7b;
+	.layout-container {
+		grid-template-columns: 1fr; /* Stack sidebar and content */
 	}
 	
-	.main-content-wrapper {
-		margin-left: 0;
+	.sidebar {
+		position: static;
+		order: -1; /* Move sidebar to top on mobile */
+		margin-bottom: 2rem;
 	}
 	
-	.sidebar-status {
-		order: -1; /* Move status to top on mobile */
+	header.nav-bar {
+		flex-direction: column;
+		gap: 1rem;
+		padding: 1rem;
 	}
 }
 
