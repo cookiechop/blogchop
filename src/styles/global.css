@@ -98,27 +98,25 @@ header.nav-bar {
 }
 
 /* === MAIN LAYOUT (GRID) === */
-.layout-container {
-    width: 100%;
-    max-width: 1200px; 
-    margin: 2rem auto; /* Centers the whole grid */
-    padding: 0 2rem;
-    
-    /* GRID SETUP */
-    display: grid;
-    /* We define 2 columns: Sidebar (280px) and Content (1fr) */
-    grid-template-columns: 280px 1fr; 
-    gap: 2rem; 
-    
-    /* IMPORTANT: Allow the banner to span both columns */
-    grid-auto-flow: dense; 
-}
+	.layout-container {
+	    width: 100%;
+	    max-width: 1200px; 
+	    margin: 2rem auto;
+	    padding: 0 2rem;
+	    
+	    /* GRID SETUP */
+	    display: grid;
+	    /* We define 2 columns: Sidebar (280px) and Content (1fr) */
+	    grid-template-columns: 280px 1fr; 
+	    gap: 2rem; 
+	    grid-auto-flow: dense; 
+	}
 
 /* === BANNER WRAPPER === */
 	.banner-wrapper {
-	    /* Span across BOTH columns (Sidebar + Content) */
 	    grid-column: 1 / -1; 
-	    margin-bottom: 0
+	    margin: 0;
+		padding-top: 0; 
 	}
 
 
@@ -152,7 +150,7 @@ header.nav-bar {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    margin: 2rem 0 0 0;
+    margin: 1rem 0 0 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.05);
 }
