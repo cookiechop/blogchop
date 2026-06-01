@@ -94,7 +94,7 @@ header.nav-bar {
 }
 
 .nav-links a:hover {
-	color: var(--accent-alt); /* renamed from --accent-dark */
+	color: var(--accent-alt); /* renamed from --accent-alt */
 }
 
 /* === MAIN LAYOUT (GRID) === */
@@ -201,7 +201,7 @@ h5 { font-size: 1.25em; }
 
 strong, b { font-weight: 700; }
 a { color: var(--accent); }
-a:hover { color: var(--accent-alt); } /* renamed from --accent-dark */
+a:hover { color: var(--accent-alt); } /* renamed from --accent-alt */
 p { margin-bottom: 1em; }
 .prose p { margin-bottom: 2em; }
 
