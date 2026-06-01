@@ -140,6 +140,7 @@ header.nav-bar {
 	grid-column: 2 / 3;
     padding: 3em 2em;
     border-radius: 8px;
+	border: 3px solid #c9cd7b;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
     min-height: 60vh;
     max-width: 900px; /* Constrains content width */
