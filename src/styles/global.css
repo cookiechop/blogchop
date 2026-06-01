@@ -118,7 +118,7 @@ header.nav-bar {
 	.banner-wrapper {
 	    /* Span across BOTH columns (Sidebar + Content) */
 	    grid-column: 1 / -1; 
-	    margin-bottom: 0.5rem; /* Space between banner and the row below */
+	    margin-bottom: 0
 	}
 
 
@@ -152,7 +152,7 @@ header.nav-bar {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    margin: 2rem 0;
+    margin: 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.05);
 }
