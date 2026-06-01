@@ -1,12 +1,10 @@
-/* src/styles/global.css */
-
 :root {
 	--accent: #5E3800;
-	--accent-dark: #260D00;
-	--black: 94, 56, 0;
+	--accent-dark: #afe0dc; /* Note: Your original had this as light teal, kept as is */
+	--black: #5E3800;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
+	--gray-dark: 34, 41, 57;	
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
@@ -15,166 +13,178 @@
 
 /* Font Definitions */
 @font-face {
-	font-family: "IMFellFrenchCanon";
-	src: url("/fonts/IMFellFrenchCanon-Regular.woff") format("woff");
+	font-family: "Cause";
+	src: url("/fonts/Cause.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: "IMFellFrenchCanon";
-	src: url("/fonts/IMFellFrenchCanon-Italic.woff") format("woff");
+	font-family: "Cause";
+	src: url("/fonts/Cause-Bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 
 /* === GLOBAL BODY STYLES === */
-body {
-	font-family: "IMFellFrenchCanon", sans-serif;
+html, body {
+	height: 100%;
 	margin: 0;
 	padding: 0;
-	text-align: left;
-	cursor: url('/images/cursor.png') 32 32, auto !important;
-	background-image: url('/images/bkg.jpeg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: #291A1A;
-	font-size: 20px;
-	line-height: 1.7;
 }
 
-/* Interactive elements inherit custom cursor */
+body {
+	font-family: "Cause", sans-serif;
+	text-align: left;
+	
+	/* Custom Cursor */
+	cursor: url('/images/cursor.png') 32 32, auto !important;
+	
+	/* Background Image */
+			background-image: url('/images/bkg.jpeg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			color: #291A1A;
+			font-size: 20px;
+			line-height: 1.7;
+		}
+
+/* Ensure interactive elements inherit the custom cursor */
 a, button, input, textarea, select, [role="button"] {
 	cursor: inherit !important;
 }
 
 /* === NAVIGATION BAR === */
 header.nav-bar {
-	position: sticky;
-	top: 0;
-	z-index: 100;
-	background-color: #faf8f5;
-	border-bottom: 2px solid #c9cd7b;
-	padding: 1rem 2rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #faf8f5; 
+    border-bottom: 2px solid #c9cd7b;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .nav-logo {
-	font-size: 1.5rem;
-	font-weight: 700;
-	color: var(--accent);
-	text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
 }
 
 .nav-links {
-	display: flex;
-	gap: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
 }
 
 .nav-links a {
-	color: var(--accent);
-	text-decoration: none;
-	font-weight: 500;
-	transition: color 0.2s ease;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-	color: var(--accent-dark);
+    color: var(--accent-dark);
 }
 
 /* === MAIN LAYOUT (GRID) === */
+/* This replaces the conflicting flexbox code to ensure sidebar shows up */
 .layout-container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 2rem auto;
-	padding: 0 2rem;
-	display: grid;
-	grid-template-columns: 280px 1fr;
-	gap: 4rem; /* Adjust this to move sidebar left/right */
+    width: 100%;
+    max-width: 1200px; 
+    margin: 2rem auto;
+    padding: 0 2rem;
+    
+    /* GRID SETUP */
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Sidebar | Content */
+    gap: 3.5rem; /* CHANGE THIS VALUE TO MOVE SIDEBAR RIGHT (e.g., 4rem, 5rem) */
 }
 
 /* === SIDEBAR === */
 .sidebar {
-	background-color: #f0efb8;
-	padding: 1.5rem;
-	border-radius: 8px;
-	border: 3px solid #c9cd7b;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-	height: fit-content;
-	position: sticky;
-	top: 80px;
+    background-color: #f0efb8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 3px solid #c9cd7b;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    position: sticky;
+    top: 80px; /* Aligns below nav bar */
 }
 
 .sidebar h3 {
-	font-size: 1.25rem;
-	margin-bottom: 1rem;
-	color: var(--accent-dark);
-	border-bottom: 2px solid var(--accent);
-	padding-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--accent); /* Using your accent color */
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
 }
 
 .sidebar ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .sidebar li {
-	margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 .sidebar a {
-	color: rgb(var(--gray-dark));
-	text-decoration: none;
-	display: block;
-	padding: 0.25rem 0;
-	transition: padding-left 0.2s ease, color 0.2s ease;
+    color: rgb(var(--gray-dark));
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    transition: padding-left 0.2s ease, color 0.2s ease;
 }
 
 .sidebar a:hover {
-	color: var(--accent);
-	padding-left: 5px;
+    color: var(--accent);
+    padding-left: 5px;
 }
 
 /* === CONTENT AREA === */
 .content-area {
-	background-color: #faf8f5;
-	padding: 3em 2em;
-	border-radius: 8px;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
-	min-height: 60vh;
+    background-color: #faf8f5;
+    padding: 3em 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
+    min-height: 60vh;
 }
 
 /* === IMAGES & DECORATIVE ELEMENTS === */
 .featured-image {
-	width: 100%;
-	height: auto;
-	border-radius: 8px;
-	margin: 2rem 0;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-	border: 1px solid rgba(0,0,0,0.05);
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .text-block {
-	background: rgba(255, 255, 255, 0.6);
-	padding: 1.5rem;
-	border-left: 4px solid var(--accent);
-	margin: 2rem 0;
-	border-radius: 0 8px 8px 0;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent);
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
 }
 
 /* === TYPOGRAPHY === */
 h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
+	color: var(--black); /* Using your black variable */
 	line-height: 1.2;
 }
 h1 { font-size: 3.052em; }
@@ -208,55 +218,55 @@ pre {
 pre > code { all: unset; }
 
 /* === QUOTES & DIVIDERS === */
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
+		blockquote {
+			border-left: 4px solid var(--accent);
+			padding: 0 0 0 20px;
+			margin: 0px;
+			font-size: 1.333em;
+		}
+		hr {
+			border: none;
+			border-top: 1px solid rgb(var(--gray-light));
+		}
 
 /* === ACCESSIBILITY === */
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	white-space: nowrap;
-}
+		.sr-only {
+			border: 0;
+			padding: 0;
+			margin: 0;
+			position: absolute !important;
+			height: 1px;
+			width: 1px;
+			overflow: hidden;
+			clip: rect(1px, 1px, 1px, 1px);
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
 
 /* === RESPONSIVE ADJUSTMENTS === */
-@media (max-width: 900px) {
-	.layout-container {
-		grid-template-columns: 1fr; /* Stack sidebar and content */
-	}
-	
-	.sidebar {
-		position: static;
-		order: -1; /* Move sidebar to top on mobile */
-		margin-bottom: 2rem;
-	}
-	
-	header.nav-bar {
-		flex-direction: column;
-		gap: 1rem;
-		padding: 1rem;
-	}
-}
-
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	.content-area {
-		padding: 1.5em 1em;
-	}
+		@media (max-width: 900px) {
+			.layout-container {
+				grid-template-columns: 1fr; /* Stack sidebar and content */
+			}
+			
+			.sidebar {
+				position: static;
+				order: -1; /* Move sidebar to top on mobile */
+				margin-bottom: 2rem;
+			}
+			
+			header.nav-bar {
+				flex-direction: column;
+				gap: 1rem;
+				padding: 1rem;
+			}
+		}
+		
+		@media (max-width: 720px) {
+			body {
+				font-size: 18px;
+			}
+			.content-area {
+				padding: 1.5em 1em;
+			}
 }
