@@ -98,17 +98,16 @@ header.nav-bar {
 }
 
 /* === MAIN LAYOUT (GRID) === */
-/* This replaces the conflicting flexbox code to ensure sidebar shows up */
 .layout-container {
     width: 100%;
     max-width: 1200px; 
-    margin: 2rem auto;
+    margin: 2rem auto; /* Centers the whole grid */
     padding: 0 2rem;
     
     /* GRID SETUP */
     display: grid;
     grid-template-columns: 280px 1fr; /* Sidebar | Content */
-    gap: 4rem; /* CHANGE THIS VALUE TO MOVE SIDEBAR RIGHT (e.g., 4rem, 5rem) */
+    gap: 2rem; /* Reduced from 4rem to make sidebar hug closer */
 }
 
 /* === SIDEBAR === */
@@ -120,38 +119,7 @@ header.nav-bar {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     height: fit-content;
     position: sticky;
-    top: 80px; /* Aligns below nav bar */
-}
-
-.sidebar h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: var(--accent); /* Using your accent color */
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 0.5rem;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar li {
-    margin-bottom: 0.75rem;
-}
-
-.sidebar a {
-    color: rgb(var(--gray-dark));
-    text-decoration: none;
-    display: block;
-    padding: 0.25rem 0;
-    transition: padding-left 0.2s ease, color 0.2s ease;
-}
-
-.sidebar a:hover {
-    color: var(--accent);
-    padding-left: 5px;
+    top: 80px;
 }
 
 /* === CONTENT AREA === */
@@ -161,6 +129,8 @@ header.nav-bar {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
     min-height: 60vh;
+    max-width: 900px; /* Constrains content width */
+    margin: 0 auto; /* Centers content within grid cell */
 }
 
 /* === IMAGES & DECORATIVE ELEMENTS === */
