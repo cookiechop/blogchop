@@ -146,14 +146,14 @@ header.nav-bar {
 }
 
 /* === IMAGES & DECORATIVE ELEMENTS === */
-.featured-image {
+.post-image {
     width: 100%;
     height: auto;
     border-radius: 4px;
     margin: 1rem;
 }
 
-.banner-wrapper .featured-image {
+.banner-wrapper .post-image {
     margin: 0 !important;
     padding: 0 !important;
     display: block;
