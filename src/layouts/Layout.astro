@@ -21,62 +21,46 @@ const { title, description } = Astro.props;
 				</head>
 
 <body style="margin: 0; padding: 0;">
-
-<!-- MAIN LAYOUT WRAPPER -->
 	<div class="layout-container">
 
-	<!-- 1. BANNER -->
-    <div class="banner-wrapper">
-        <img 
-            src="/images/banner.jpeg" 
-            alt="Header Banner" 
-            class="banner"
-			style="
-	            width: 100%; 
-	            height: auto; 
-	            border-radius: 8px; 
-	            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-	            margin: 0 !important; 
-	            padding: 0 !important;
-	            display: block;
-	        "
-    	/>
-		</div>
-			
-		<!-- SIDEBAR -->
-			<aside class="sidebar">
-			    <h4>Menu</h4>
-			    <nav class="sidebar-nav">
-			        <a href="/" class="sidebar-btn">Home</a>
-			        <a href="/blog" class="sidebar-btn">Blog</a>
-			        <a href="/puzzles" class="sidebar-btn">Puzzles</a>
-			        <a href="/newsletter" class="sidebar-btn">Newsletter</a>
-			    </nav>
-			    <h4 style="margin-top: 1.5rem;">Status</h4>
-			    <p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
-			        This site is under construction.
-			        Works best on desktop!
-			    </p>
-			</aside>
-
-			<!-- Comments box -->
-        <div class="sidebar-comments">
-            <Postcomments />
-        </div>
-
-
-<!-- MAIN CONTENT AREA -->
-	<main class="content-area">
-			 <slot /> 
-			</main>
-
-  <!-- Comments box -->
-        <div class="page-comments">
-            <Postcomments />
+		<!-- 1. BANNER -->
+		<div class="banner-wrapper">
+			<img 
+				src="/images/banner.jpeg" 
+				alt="Header Banner" 
+				class="banner"
+				style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 0 !important; padding: 0 !important; display: block;"
+			/>
 		</div>
 
-		<!-- FOOTER -->
-		<Footer />
+		<!-- 2. SIDEBAR -->
+		<aside class="sidebar">
+			<h4>Menu</h4>
+			<nav class="sidebar-nav">
+				<a href="/" class="sidebar-btn">Home</a>
+				<a href="/blog" class="sidebar-btn">Blog</a>
+				<a href="/puzzles" class="sidebar-btn">Puzzles</a>
+				<a href="/newsletter" class="sidebar-btn">Newsletter</a>
+			</nav>
+			<h4 style="margin-top: 1.5rem;">Status</h4>
+			<p style="font-size: 0.9rem; color: rgb(var(--gray-dark));">
+				This site is under construction.
+				Works best on desktop!
+			</p>
+		</aside>
 
-	</body>
+		<!-- 3. MAIN CONTENT AREA -->
+		<main class="content-area">
+			<slot />
+		</main>
+
+		<!-- 4. COMMENTS (below content, same column) -->
+		<div class="page-comments">
+			<Postcomments />
+		</div>
+
+	</div> <!-- end .layout-container -->
+
+	<Footer />
+</body>
 </html>
