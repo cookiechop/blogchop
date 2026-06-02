@@ -125,6 +125,15 @@ header.nav-bar {
 	color: var(--accent-alt);
 }
 
+/* === SIDEBAR COMMENTS === */
+.sidebar-comments {
+    grid-column: 1 / 2;        /* keeps it in the sidebar column */
+    background-color: #f0efb8;
+    border: 3px solid #c9cd7b;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 
 /* === MAIN LAYOUT (GRID) === */
 .layout-container {
