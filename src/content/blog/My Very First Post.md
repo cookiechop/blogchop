@@ -6,7 +6,9 @@ heroImage: "/images/musicposthero.jpg"
 ---
 
 
-
+<p>
+  This is my first post! 
+</p>
 
 
 
