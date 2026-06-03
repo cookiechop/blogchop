@@ -14,11 +14,11 @@ I have also been getting into geocaching. For those who don't know what that is,
 Also does anyone have any suggestions ...?? I'm thinking of making a photo gallery page maybe? Or maybe I'll just leave photos in individual blog posts. A "review corner" was suggested to me but I don't think I'm eloquent enough to be posting serious reviews of things. Speaking of which, I just saw the Backrooms movie. I didn't hate it but I didn't really feel positively about it. I think the references to the backrooms (community?) online was really cool / accurate and the soundtrack was awesome. The aesthetic was there but the story was not. Anything based in internet culture will always come off as corny / unserious to me, but maybe that's a personal issue lol. My little cousin pointed out to me that there was a new Boards of Canada song during the credits and I totally did not catch that.
 <br>
     <figure style="text-align: center; margin: 1.5rem 0;">
-        <img src="images/backrooms.jpg" alt="i shoulda never smoked ts" style="width:500px; max-width:100%; height:auto; border-radius:8px;" />
+        <img src="images/backrooms.jpg" style="width:500px; max-width:100%; height:auto; border-radius:8px;" />
     </figure>
 To all my college friends, good luck with finals! Should I be studying right now...? Yeah.<br>
       <figure style="text-align: center; margin: 1.5rem 0;">
-              <img src="images/finals.jpg" alt="you got this" style="width:500px; max-width:100%; height:auto; border-radius:8px;" />
+              <img src="images/finals.jpg" style="width:500px; max-width:100%; height:auto; border-radius:8px;" />
           </figure>
 <br>
 Leave a comment!!! Please!! I'm begging!! Anything!!! Hello!!!!!
