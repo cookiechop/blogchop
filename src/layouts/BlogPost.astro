@@ -93,9 +93,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					<slot />
 				</div>
 			</article>
-		<div class="comments-wrapper">
-    	<Postcomments />
-	</div>
+    	<div class="comments-wrapper">
+    <Postcomments title={title} />
+</div>
 	</main>
 <Footer />
 </body>
