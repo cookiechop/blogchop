@@ -21,6 +21,6 @@ To all my college friends, good luck with finals! Should I be studying right now
       <figure style="text-align: center; margin: 1.5rem 0;">
               <img src="/images/finals.jpg" style="width:200px; max-width:100%; height:auto; border-radius:8px;" />
           </figure>
-<br>
+          
 Leave a comment!!! Please!! I'm begging!! Anything!!! Hello!!!!!
 </p>
