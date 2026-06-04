@@ -188,6 +188,12 @@ header.nav-bar {
     box-sizing: border-box; 
 }
 
+/* === CUSDIS IFRAME === */
+#cusdis_thread iframe {
+    min-height: 600px !important;
+    width: 100% !important;
+}
+
 /* === IMAGES & DECORATIVE ELEMENTS === */
 .content-area img {
 	max-width: 100%;
