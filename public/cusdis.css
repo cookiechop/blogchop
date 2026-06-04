@@ -1,0 +1,73 @@
+/* === CUSDIS CUSTOM STYLES === */
+
+/* Input fields */
+#cusdis_thread input,
+#cusdis_thread textarea {
+    background-color: #faf8f5 !important;
+    border: 2px solid #c9cd7b !important;
+    border-radius: 8px !important;
+    color: #291A1A !important;
+    font-family: "Cause", sans-serif !important;
+    padding: 0.5rem !important;
+}
+
+#cusdis_thread input:focus,
+#cusdis_thread textarea:focus {
+    outline: none !important;
+    border-color: #5E3800 !important;
+}
+
+/* Submit button */
+#cusdis_thread button[type="submit"] {
+    background-color: #f7cada !important;
+    border: 2px solid #e29ab3 !important;
+    border-radius: 999px !important;
+    color: #5E3800 !important;
+    font-family: "Cause", sans-serif !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1.5rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+}
+
+#cusdis_thread button[type="submit"]:hover {
+    background-color: #e29ab3 !important;
+}
+
+/* Reply button */
+#cusdis_thread button {
+    color: #5E3800 !important;
+    font-family: "Cause", sans-serif !important;
+}
+
+/* Comment cards */
+#cusdis_thread .comment {
+    border-left: 3px solid #c9cd7b !important;
+    padding-left: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Commenter name */
+#cusdis_thread .comment-author {
+    color: #5E3800 !important;
+    font-weight: 700 !important;
+    font-family: "Cause", sans-serif !important;
+}
+
+/* Comment date */
+#cusdis_thread .comment-date {
+    color: #8a7a7a !important;
+    font-size: 0.85rem !important;
+}
+
+/* Comment text */
+#cusdis_thread .comment-content {
+    color: #291A1A !important;
+    font-family: "Cause", sans-serif !important;
+}
+
+/* Powered by Cusdis link */
+#cusdis_thread .powered-by {
+    color: #8a7a7a !important;
+    font-size: 0.8rem !important;
+}
