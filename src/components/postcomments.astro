@@ -11,26 +11,21 @@ const pageTitle = Astro.props.title ?? 'Untitled';
   data-page-title={pageTitle}
   data-theme="auto"
 ></div>
+<script is:inline async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 <script is:inline>
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.addedNodes.length === 0) return;
       const iframe = mutation.addedNodes[0];
       if (iframe.tagName !== 'IFRAME') return;
-      setTimeout(() => {
-        try {
-          const styles = `
-            body { font-family: sans-serif; background: #f0efb8; }
-            button { background: #f7cada; border: 2px solid #e29ab3; border-radius: 999px; color: #5E3800; }
-            button:hover { background: #e29ab3; }
-            input, textarea { border: 2px solid #c9cd7b; border-radius: 8px; background: #faf8f5; }
-            .comment { 
-              background: #faf8f5 !important; 
-              border: 2px solid #c9cd7b !important; 
-              border-radius: 8px !important; 
-              padding: 1rem !important; 
-              margin-bottom: 1rem !important; 
-            }
-          `;
-          iframe.srcdoc = iframe.srcdoc.replace('</style>', styles + '</style>');
-        }
+      const styles = `
+        body { font-family: sans-serif; background: #f0efb8; }
+        button { background: #f7cada; border: 2px solid #e29ab3; border-radius: 999px; color: #5E3800; }
+        button:hover { background: #e29ab3; }
+        input, textarea { border: 2px solid #c9cd7b; border-radius: 8px; background: #faf8f5; }
+      `;
+      iframe.srcdoc = iframe.srcdoc.replace('</style>', styles + '</style>');
+    });
+  });
+  observer.observe(document.getElementById('cusdis_thread'), { childList: true, subtree: true });
+</script>
