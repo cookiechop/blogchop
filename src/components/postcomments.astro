@@ -20,8 +20,8 @@ const pageTitle = Astro.props.title ?? 'Untitled';
       if (iframe.tagName !== 'IFRAME') return;
       const styles = `
         body { font-family: sans-serif; background: #f0efb8; }
-        button { background: #f7cada; border: 2px solid #e29ab3; border-radius: 999px; color: #5E3800; }
-        button:hover { background: #e29ab3; }
+        button { background: #FFF3A6; border: 2px solid #E0D58B; border-radius: 999px; color: #5E3800; }
+        button:hover { background: #E0D58B; }
         input, textarea { border: 2px solid #c9cd7b; border-radius: 8px; background: #F7F7F7; }
       `;
       iframe.srcdoc = iframe.srcdoc.replace('</style>', styles + '</style>');
