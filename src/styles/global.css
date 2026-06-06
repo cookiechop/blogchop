@@ -90,8 +90,8 @@ header.nav-bar {
 	position: sticky;
 	top: 0;
 	z-index: 100;
-	background-color: #faf8f5;
-	border-bottom: 2px solid #c9cd7b;
+	background-color: #FCFBCA;
+	border-bottom: 2px solid #E3E2A8;
 	padding: 0;
 	display: flex;
 	justify-content: space-between;
