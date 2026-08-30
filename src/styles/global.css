@@ -154,10 +154,10 @@ header.nav-bar {
 .sidebar {
 	grid-column: 1 / 2;
 	grid-row: 2 / 4;           /* spans rows 2 and 3, beside content and comments */
-	background-color: #FCE1EC;
+	background-color: #FFFFFF;
 	padding: 0.75rem;
 	border-radius: 8px;
-	border: 3px solid #F8BAD3;
+	border: 3px solid #FFFFFF;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 	height: fit-content;
 	position: sticky;
@@ -166,12 +166,12 @@ header.nav-bar {
 
 /* === CONTENT AREA === */
 .content-area {
-	background-color: #FCFBDC;
+	background-color: #FFFFFF;
 	grid-column: 2 / 3;
 	grid-row: 2;               /* row 2: main content */
 	padding: 1em 1.2em;
 	border-radius: 8px;
-	border: 3px solid #E6E4C3;
+	border: 3px solid #FFFFFF;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
 	min-height: 60vh;
 }
