@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap');
+
 :root {
 	--accent: #5E3800;
 	--accent-alt: #afe0dc;        
@@ -35,7 +37,9 @@ html, body {
 }
 
 body {
-	font-family: "Cause", sans-serif;
+	font-family: "Geist Pixel", "Cause", sans-serif;
+	font-variation-settings: "ELSH" 1; /* Square variant, default pixel style */
+	letter-spacing: 0.02em;
 	text-align: left;
 
 	/* Custom Cursor */
@@ -51,9 +55,18 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: #291A1A;
-	font-size: 13px;
-	line-height: 1.4;
+	font-size: 14px;
+	line-height: 1.5;
 }
+
+/* === GEIST PIXEL VARIANT UTILITIES ===
+   Apply any of these classes to swap the pixel style on a specific
+   element (e.g. <h1 class="font-pixel-grid">Title</h1>) */
+.font-pixel-square   { font-variation-settings: "ELSH" 1; }
+.font-pixel-circle   { font-variation-settings: "ELSH" 20; }
+.font-pixel-grid     { font-variation-settings: "ELSH" 40; }
+.font-pixel-triangle { font-variation-settings: "ELSH" 60; }
+.font-pixel-line     { font-variation-settings: "ELSH" 80; }
 
 /* Ensure interactive elements inherit the custom cursor */
 a, button, input, textarea, select, [role="button"] {
