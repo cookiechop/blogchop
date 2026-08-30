@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap');
-
 :root {
 	--accent: #5E3800;
 	--accent-alt: #afe0dc;        
@@ -25,6 +23,16 @@
 	font-family: "Cause";
 	src: url("/fonts/Cause-Bold.woff") format("woff");
 	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Self-hosted to avoid CSP style-src issues with fonts.googleapis.com.
+   Place the variable woff2 file at public/fonts/GeistPixel-Variable.woff2 */
+@font-face {
+	font-family: "Geist Pixel";
+	src: url("/fonts/GeistPixel-Variable.woff2") format("woff2-variations");
+	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
 }
@@ -206,6 +214,14 @@ header.nav-bar {
 .content-area img {
 	max-width: 100%;
 	height: auto;
+	border-radius: 8px;
+}
+
+/* Blinkies / pixel-art gifs: no rounded corners.
+   Add class="blinkie" to these <img> tags in your markup. */
+.blinkie,
+.content-area img.blinkie {
+	border-radius: 0;
 }
 
 .post-image {
