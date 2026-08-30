@@ -180,8 +180,8 @@ header.nav-bar {
 .page-comments {
 	grid-column: 2 / 3;
 	grid-row: 3;               /* row 3: below content, same column */
-	background-color: #D4F6FF;
-	border: 3px solid #AAEDFF;
+	background-color: #FFFFFF;
+	border: 3px solid #FFFFFF;
 	border-radius: 8px;
 	padding: 0.8rem;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
