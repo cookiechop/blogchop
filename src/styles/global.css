@@ -167,8 +167,6 @@ header.nav-bar {
 	display: block;
 	width: 100%;
 	height: auto;
-	border-radius: 8px;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* === SIDEBAR === */
@@ -177,9 +175,7 @@ header.nav-bar {
 	grid-row: 2 / 4;           /* spans rows 2 and 3, beside content and comments */
 	background-color: #FFFFFF;
 	padding: 0.75rem;
-	border-radius: 8px;
 	border: 3px solid #FFFFFF;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 	height: fit-content;
 }
 
@@ -189,9 +185,7 @@ header.nav-bar {
 	grid-column: 2 / 3;
 	grid-row: 2;               /* row 2: main content */
 	padding: 1em 1.2em;
-	border-radius: 8px;
 	border: 3px solid #FFFFFF;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
 	min-height: 60vh;
 }
 
@@ -201,9 +195,7 @@ header.nav-bar {
 	grid-row: 3;               /* row 3: below content, same column */
 	background-color: #FFFFFF;
 	border: 3px solid #FFFFFF;
-	border-radius: 8px;
 	padding: 0.8rem;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
 	width: 100%;      
     box-sizing: border-box; 
 }
@@ -212,11 +204,10 @@ header.nav-bar {
 .content-area img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
 }
 
-/* Blinkies / pixel-art gifs: no rounded corners.
-   Add class="blinkie" to these <img> tags in your markup. */
+/* Blinkies /
+   Add class="blinkie" to these <img> tags in markup. */
 .blinkie,
 .content-area img.blinkie {
 	border-radius: 0;
@@ -225,7 +216,6 @@ header.nav-bar {
 .post-image {
 	width: 100%;
 	height: auto;
-	border-radius: 4px;
 	margin: 0.5rem;
 }
 
@@ -240,7 +230,6 @@ header.nav-bar {
 	padding: 0.8rem;
 	border-left: 4px solid var(--accent);
 	margin: 1rem 0;
-	border-radius: 0 8px 8px 0;
 }
 
 /* === TYPOGRAPHY === */
@@ -260,35 +249,6 @@ a { color: var(--accent); }
 a:hover { color: var(--accent-alt); }
 p { margin-bottom: 0.6em; }
 .prose p { margin-bottom: 0.8em; }
-
-/* === FORMS & TABLES === */
-textarea { width: 100%; font-size: 13px; }
-input { font-size: 13px; }
-table { width: 100%; }
-
-/* === CODE BLOCKS === */
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1em;
-	border-radius: 8px;
-}
-pre > code { all: unset; }
-
-/* === QUOTES & DIVIDERS === */
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 14px;
-	margin: 0px;
-	font-size: 1.15em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
 
 /* === ACCESSIBILITY === */
 .sr-only {
