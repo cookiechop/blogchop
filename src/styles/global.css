@@ -94,8 +94,8 @@ a, button, input, textarea, select, [role="button"] {
 	text-align: center;
 	padding: 0.3rem 0.6rem;
 	border-radius: 6px;
-	background-color: #f7cada;
-	border: 2px solid #e29ab3;
+	background-color: #C4FF8A;
+	border: 2px solid #ADFF5C;
 	color: var(--accent);
 	font-weight: 500;
 	font-size: 0.9em;
@@ -103,8 +103,8 @@ a, button, input, textarea, select, [role="button"] {
 }
 
 .sidebar-btn:hover {
-	background-color: #e29ab3;
-	color: #260D00;
+	background-color: #ADFF5C;
+	color: #69D100;
 }
 
 /* === NAVIGATION BAR === */
