@@ -45,12 +45,12 @@ body {
 
 /* === SECTION HEADER BOXES === */
 h3 {
-	background: linear-gradient(135deg, #EBFBFF, #ADE3F7);
-	color: var(--brown);
+	background: #AEF1FC;
+	color: #000000;
 	font-size: 1.3em;
 	padding: 0.5em 1em;
 	border-radius: 8px;
-	border: 1px solid #b8e4f5;
+	border: 1px solid #A4E1EB;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 	text-align: center;
 	margin-bottom: 0.6rem;
