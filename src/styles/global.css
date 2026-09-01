@@ -43,6 +43,27 @@ body {
 	line-height: 1.5;
 }
 
+/* === SECTION HEADER BOXES === */
+h3 {
+	background: linear-gradient(135deg, #d6f1fb, #f0fbff);
+	color: var(--brown);
+	font-size: 1.3em;
+	padding: 0.5em 1em;
+	border-radius: 8px;
+	border: 1px solid #b8e4f5;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	text-align: center;
+	margin-bottom: 0.6rem;
+}
+
+/* === DIVIDERS === */
+hr {
+	border: none;
+	height: 2px;
+	background: linear-gradient(to right, transparent, #a8dff0 20%, #a8dff0 80%, transparent);
+	margin: 1.5rem 0;
+}
+
 /* === GEIST PIXEL VARIANT UTILITIES ===
    Apply any of these classes to swap the pixel style on a specific
    element (e.g. <h1 class="font-pixel-grid">Title</h1>) */
