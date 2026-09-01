@@ -5,24 +5,6 @@
 	--gray: 96, 115, 159;         
 }
 
-/* Font Definitions */
-@font-face {
-	font-family: "Cause";
-	src: url("/fonts/Cause.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Cause";
-	src: url("/fonts/Cause-Bold.woff") format("woff");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-
-/* Self-hosted to avoid CSP style-src issues with fonts.googleapis.com.
-   Place the variable woff2 file at public/fonts/GeistPixel-Variable.woff2 */
 @font-face {
 	font-family: "Geist Pixel";
 	src: url("/fonts/GeistPixel-Variable.woff2") format("woff2-variations");
@@ -39,7 +21,7 @@ html, body {
 }
 
 body {
-	font-family: "Geist Pixel", "Cause", sans-serif;
+	font-family: "Geist Pixel", sans-serif;
 	font-variation-settings: "ELSH" 1; /* Square variant, default pixel style */
 	letter-spacing: 0.02em;
 	text-align: left;
