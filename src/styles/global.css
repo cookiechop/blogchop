@@ -91,8 +91,8 @@ a, button, input, textarea, select, [role="button"] {
 	text-align: center;
 	padding: 0.3rem 0.6rem;
 	border-radius: 6px;
-	background-color: #BCF274;
-	border: 2px solid #94CF46;
+	background-color: #f0efb8;
+	border: 2px solid #c9cd7b;
 	color: var(--accent);
 	font-weight: 500;
 	font-size: 0.9em;
