@@ -142,10 +142,47 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						background-color: #ADFF5C !important;
 					}
 
-					/* === Comment spacing === */
+					/* === Comment spacing & dividers === */
 					.my-4 {
 						margin-top: 0.75rem !important;
 						margin-bottom: 0.75rem !important;
+					}
+
+					/* Top-level comments (not inside a reply wrapper) get
+					   a divider underneath to separate one commenter's
+					   thread from the next. */
+					#root > div > div.mt-4.px-1 > .my-4 {
+						padding-bottom: 0.75rem !important;
+						border-bottom: 1px dashed #d8d8d8 !important;
+					}
+
+					#root > div > div.mt-4.px-1 > .my-4:last-child {
+						border-bottom: none !important;
+					}
+
+					/* === Commenter name & date === */
+					.flex.items-center {
+						font-weight: 700 !important;
+						color: #5E3800 !important;
+						font-size: 0.95em !important;
+					}
+
+					.text-gray-500.text-sm {
+						color: rgb(96, 115, 159) !important;
+						font-size: 0.75em !important;
+						font-style: italic !important;
+						margin-bottom: 0.35rem !important;
+					}
+
+					/* === Form field spacing === */
+					form label, form > div {
+						margin-bottom: 0.5rem !important;
+					}
+
+					input[type="text"], input[type="email"], textarea {
+						margin-top: 0.2rem !important;
+						margin-bottom: 0.6rem !important;
+						padding: 0.35rem 0.5rem !important;
 					}
 
 					/* === Reply nesting ===
