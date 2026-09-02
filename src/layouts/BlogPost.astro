@@ -142,22 +142,27 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						background-color: #ADFF5C !important;
 					}
 
-					/* === Structural reply indentation ===
-					   Cusdis nests replies inside their parent comment's
-					   container regardless of class names, so we target
-					   divs that contain another comment-like div inside them.
-					   This is a best-effort structural rule — inspect the
-					   live DOM and refine the selector depth if needed. */
-					div div div div {
-						border-left: 3px solid #a8dff0 !important;
+					/* === Comment spacing === */
+					.my-4 {
+						margin-top: 0.75rem !important;
+						margin-bottom: 0.75rem !important;
+					}
+
+					/* === Reply nesting ===
+					   Cusdis already wraps nested replies in a div with
+					   "pl-4 border-l-2 border-color-gray-200" (its own
+					   built-in indent marker), so we target that combo
+					   directly instead of guessing at div depth. This
+					   only matches real reply-thread wrappers, not the
+					   name/date/body divs inside a single comment. */
+					.pl-4.border-l-2 {
+						border-left-color: #a8dff0 !important;
+						border-left-width: 3px !important;
 						padding-left: 0.75rem !important;
 						margin-top: 0.5rem !important;
 					}
 
-					/* Give any element that looks like a reply/nested comment
-					   a small label-style cue. Adjust selector once you've
-					   inspected the real DOM structure in devtools. */
-					div div div div::before {
+					.pl-4.border-l-2::before {
 						content: "↳ reply";
 						display: block;
 						font-size: 0.7em;
