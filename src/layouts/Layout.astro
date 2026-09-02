@@ -8,7 +8,6 @@ import '../styles/global.css';
 
 const { title, description } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -19,10 +18,8 @@ const { title, description } = Astro.props;
 			<img src="/images/annoyingdog.gif" style="max-height: 120px; width: auto;" alt="Annoying dog"/>
 			</div>
 				</head>
-
 <body style="margin: 0; padding: 0;">
 	<div class="layout-container">
-
 		<!-- 1. BANNER -->
 		<div class="banner-wrapper">
 			<img 
@@ -32,7 +29,6 @@ const { title, description } = Astro.props;
 				style="width: 98%; height: auto; margin: 0 !important; padding: 0 !important; display: block;"
 			/>
 		</div>
-
 		<!-- 2. SIDEBAR -->
 		<aside class="sidebar">
 			<img src="/images/borders/bunnywire.gif"/>
@@ -59,21 +55,162 @@ const { title, description } = Astro.props;
 			</p>
 			<img src="/images/borders/milkncookies.png"/>
 		</aside>
-
 		<!-- 3. MAIN CONTENT AREA -->
 		<main class="content-area">
 			<slot />
 		</main>
-
 		<!-- 4. COMMENTS (below content, same column) -->
 	<div class="page-comments">
 	<h3>Comments</h3><p>Comment not showing? That's normal! I have to approve it before it can show.</p>
     <Postcomments title={title} />
+
+    <script>
+		// Cusdis renders via iframe srcdoc, which (unlike a normal cross-origin
+		// iframe) shares your page's origin — so we can reach into its
+		// contentDocument and inject our own styles once it's loaded.
+
+		function styleCusdisIframe() {
+			const iframe = document.querySelector('#cusdis_thread iframe');
+			if (!iframe) return;
+
+			const inject = () => {
+				let doc;
+				try {
+					doc = iframe.contentDocument;
+				} catch (e) {
+					return; // not same-origin yet / not ready
+				}
+				if (!doc || !doc.body) return;
+				if (doc.getElementById('cusdis-custom-style')) return; // already injected
+
+				const style = doc.createElement('style');
+				style.id = 'cusdis-custom-style';
+				style.textContent = `
+					/* === Base theme to match the site === */
+					body {
+						font-family: "Geist Pixel", sans-serif !important;
+						color: #291A1A !important;
+						background: transparent !important;
+					}
+
+					textarea, input {
+						font-family: inherit !important;
+						border-radius: 6px !important;
+						border: 1px solid #b8e4f5 !important;
+					}
+
+					button {
+						background-color: #FFC98A !important;
+						border: 2px solid #FF9F45 !important;
+						color: #5E3800 !important;
+						border-radius: 6px !important;
+						font-family: inherit !important;
+					}
+
+					button:hover {
+						background-color: #FF9F45 !important;
+					}
+
+					/* === Comment spacing & dividers === */
+					.my-4 {
+						margin-top: 0.75rem !important;
+						margin-bottom: 0.75rem !important;
+					}
+
+					/* Top-level comments (not inside a reply wrapper) get
+					   a divider underneath to separate one commenter's
+					   thread from the next. */
+					#root > div > div.mt-4.px-1 > .my-4 {
+						padding-bottom: 0.75rem !important;
+						border-bottom: 1px dashed #d8d8d8 !important;
+					}
+
+					#root > div > div.mt-4.px-1 > .my-4:last-child {
+						border-bottom: none !important;
+					}
+
+					/* === Commenter name & date === */
+					.flex.items-center {
+						font-weight: 700 !important;
+						color: #5E3800 !important;
+						font-size: 0.95em !important;
+					}
+
+					.text-gray-500.text-sm {
+						color: rgb(96, 115, 159) !important;
+						font-size: 0.75em !important;
+						font-style: italic !important;
+						margin-bottom: 0.35rem !important;
+					}
+
+					/* === Form field spacing === */
+					form label, form > div {
+						margin-bottom: 0.5rem !important;
+					}
+
+					input[type="text"], input[type="email"], textarea {
+						margin-top: 0.2rem !important;
+						margin-bottom: 0.6rem !important;
+						padding: 0.35rem 0.5rem !important;
+					}
+
+					/* === Reply nesting ===
+					   Cusdis already wraps nested replies in a div with
+					   "pl-4 border-l-2 border-color-gray-200" (its own
+					   built-in indent marker), so we target that combo
+					   directly instead of guessing at div depth. This
+					   only matches real reply-thread wrappers, not the
+					   name/date/body divs inside a single comment. */
+					.pl-4.border-l-2 {
+						border-left-color: #a8dff0 !important;
+						border-left-width: 3px !important;
+						padding-left: 0.75rem !important;
+						margin-top: 0.5rem !important;
+					}
+
+					.pl-4.border-l-2::before {
+						content: "↳ reply";
+						display: block;
+						font-size: 0.7em;
+						color: #5E3800;
+						opacity: 0.6;
+						margin-bottom: 0.15rem;
+					}
+				`;
+				doc.head.appendChild(style);
+			};
+
+			// Try immediately, then retry briefly since Cusdis loads
+			// its own content asynchronously after the iframe itself loads.
+			iframe.addEventListener('load', () => {
+				inject();
+				setTimeout(inject, 300);
+				setTimeout(inject, 1000);
+			});
+
+			// Also watch for content changes in case comments load in later
+			// (e.g. after approval) or the iframe gets replaced.
+			try {
+				const obs = new MutationObserver(() => inject());
+				if (iframe.contentDocument && iframe.contentDocument.body) {
+					obs.observe(iframe.contentDocument.body, { childList: true, subtree: true });
+				}
+			} catch (e) {
+				// ignore if not accessible yet
+			}
+		}
+
+		// The iframe may not exist immediately on page load, so watch the
+		// comments container for it to appear.
+		const cusdisContainer = document.querySelector('#cusdis_thread');
+		if (cusdisContainer) {
+			styleCusdisIframe();
+			const containerObserver = new MutationObserver(() => styleCusdisIframe());
+			containerObserver.observe(cusdisContainer, { childList: true, subtree: true });
+		}
+	</script>
 </div>
-
-
 	</div> <!-- end .layout-container -->
-
 	<Footer />
 </body>
 </html>
