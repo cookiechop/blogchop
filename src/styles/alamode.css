@@ -1,0 +1,275 @@
+:root {
+	--accent: #5E3800;
+	--accent-alt: #afe0dc;        
+	--brown: #5E3800;            
+	--gray: 96, 115, 159;         
+}
+
+@font-face {
+	font-family: "Geist Pixel";
+	src: url("/fonts/GeistPixel-Variable.woff2") format("woff2-variations");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* === GLOBAL BODY STYLES === */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Geist Pixel", sans-serif;
+	font-variation-settings: "ELSH" 1; /* Square variant, default pixel style */
+	letter-spacing: 0.02em;
+	text-align: left;
+
+	/* Custom Cursor */
+	cursor: url('/images/cursor.png') 32 32, auto !important;
+
+	/* Background Image */
+	background-image: url('/images/alamodebkg.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed; /* overridden to scroll on mobile below */
+
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	color: #291A1A;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/* === SECTION HEADER BOXES === */
+h3 {
+	background: #AEF1FC;
+	color: #000000;
+	font-size: 1.3em;
+	padding: 0.5em 1em;
+	border-radius: 8px;
+	border: 1px solid #A4E1EB;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	text-align: center;
+	margin-bottom: 0.6rem;
+}
+
+/* === DIVIDERS === */
+hr {
+	border: none;
+	height: 2px;
+	background: linear-gradient(to right, transparent, #a8dff0 20%, #a8dff0 80%, transparent);
+	margin: 1.5rem 0;
+}
+
+/* === GEIST PIXEL VARIANT UTILITIES ===
+   Apply any of these classes to swap the pixel style on a specific
+   element (e.g. <h1 class="font-pixel-grid">Title</h1>) */
+.font-pixel-square   { font-variation-settings: "ELSH" 1; }
+.font-pixel-circle   { font-variation-settings: "ELSH" 20; }
+.font-pixel-grid     { font-variation-settings: "ELSH" 40; }
+.font-pixel-triangle { font-variation-settings: "ELSH" 60; }
+.font-pixel-line     { font-variation-settings: "ELSH" 80; }
+
+/* Ensure interactive elements inherit the custom cursor */
+a, button, input, textarea, select, [role="button"] {
+	cursor: inherit !important;
+}
+
+/* === SIDEBAR NAV BUTTONS === */
+.sidebar-nav {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.sidebar-btn {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	padding: 0.3rem 0.6rem;
+	border-radius: 6px;
+	background-color: #f0efb8;
+	border: 2px solid #c9cd7b;
+	color: var(--accent);
+	font-weight: 500;
+	font-size: 0.9em;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-btn:hover {
+	background-color: #ADFF5C;
+	color: #69D100;
+}
+
+/* === MAIN LAYOUT (GRID) === */
+.layout-container {
+	width: 100%;
+	max-width: 900px;
+	margin: 1rem auto;
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	gap: 1rem;
+}
+
+/* === BANNER WRAPPER === */
+.banner-wrapper {
+	grid-column: 1 / -1;
+	grid-row: 1;               /* row 1: spans full width */
+	margin: 0 -1rem !important;
+	padding: 0 !important;
+}
+
+.banner-wrapper img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+	grid-column: 1 / 2;
+	grid-row: 2 / 4;           /* spans rows 2 and 3, beside content and comments */
+	background-color: #FFFFFF;
+	padding: 0.75rem;
+	border: 3px solid #FFFFFF;
+	height: fit-content;
+}
+
+/* === CONTENT AREA === */
+.content-area {
+	background-color: #FFFFFF;
+	grid-column: 2 / 3;
+	grid-row: 2;               /* row 2: main content */
+	padding: 1em 1.2em;
+	border: 3px solid #FFFFFF;
+	min-height: 60vh;
+}
+
+/* === PAGE COMMENTS === */
+.page-comments {
+	grid-column: 2 / 3;
+	grid-row: 3;               /* row 3: below content, same column */
+	background-color: #FFFFFF;
+	border: 3px solid #FFFFFF;
+	padding: 0.8rem;
+	width: 100%;      
+    box-sizing: border-box; 
+}
+
+/* === IMAGES & DECORATIVE ELEMENTS === */
+.content-area img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Blinkies /
+   Add class="blinkie" to these <img> tags in markup. */
+.blinkie,
+.content-area img.blinkie {
+	border-radius: 0;
+}
+
+.post-image {
+	width: 100%;
+	height: auto;
+	margin: 0.5rem;
+}
+
+.banner-wrapper .post-image {
+	margin: 0 !important;
+	padding: 0 !important;
+	display: block;
+}
+
+.text-block {
+	background: rgba(255, 255, 255, 0.6);
+	padding: 0.8rem;
+	border-left: 4px solid var(--accent);
+	margin: 1rem 0;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.4rem 0;
+	color: var(--brown);
+	line-height: 1.2;
+}
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.15em; }
+h5 { font-size: 1.05em; }
+
+strong, b { font-weight: 700; }
+a { color: var(--accent); }
+a:hover { color: var(--accent-alt); }
+p { margin-bottom: 0.6em; }
+.prose p { margin-bottom: 0.8em; }
+
+/* === ACCESSIBILITY === */
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 900px) {
+	body {
+		background-attachment: scroll;
+	}
+
+	.layout-container {
+		grid-template-columns: 1fr;
+		padding: 0 0.75rem;
+	}
+
+	.banner-wrapper {
+		margin: 0 -0.75rem !important;
+	}
+
+	.sidebar {
+		grid-column: 1;
+		grid-row: auto;
+		position: static;
+		order: -1;
+		margin-bottom: 1rem;
+	}
+
+	.content-area {
+		grid-column: 1;
+		grid-row: auto;
+	}
+
+	.page-comments {
+		grid-column: 1;
+		grid-row: auto;
+	}
+
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 13px;
+	}
+	.content-area {
+		padding: 0.9em 0.7em;
+	}
+}
+
+/* === CUSDIS IFRAME === */
+#cusdis_thread iframe {
+    min-height: 600px !important;
+    width: 100% !important;
+}
