@@ -32,7 +32,6 @@ body {
 	/* Background Image */
 	background-image: url('/images/sunshinealamode/musicbkg.png');
 	background-size: cover;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed; /* overridden to scroll on mobile below */
 
