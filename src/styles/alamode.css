@@ -100,7 +100,7 @@ a, button, input, textarea, select, [role="button"] {
 
 .sidebar-btn:hover {
 	background-color: #c9cd7b;
-	color: #c9cd7b;
+	color: #000000;
 }
 
 /* === MAIN LAYOUT (GRID) === */
